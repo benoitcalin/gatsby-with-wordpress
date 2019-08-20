@@ -16,8 +16,9 @@ const HomePage = () => (
         const banner = data.wpgraphql.page.page_home.banner
         const about = data.wpgraphql.page.page_home.about
         const quote = data.wpgraphql.page.page_home.quote
-        const testimonials = data.wpgraphql.page.page_home.testimonials
-        const features = data.wpgraphql.page.page_home.features
+        const testimonials_title = data.wpgraphql.page.page_home.testimonials.title
+        const testimonials = [data.wpgraphql.page.page_home.testimonials.testimonial1, data.wpgraphql.page.page_home.testimonials.testimonial2, data.wpgraphql.page.page_home.testimonials.testimonial3]
+        const features = [data.wpgraphql.page.page_home.features.feature1, data.wpgraphql.page.page_home.features.feature2, data.wpgraphql.page.page_home.features.feature3]
         const button = data.wpgraphql.page.page_home.buttonText
 
         return (
@@ -26,7 +27,7 @@ const HomePage = () => (
             <About data={about} />
             <Quote data={quote} button={button} />
             <Features data={features} />
-            <Testimonials data={testimonials} button={button} />
+            <Testimonials title={testimonials_title} testimonials={testimonials} button={button} />
           </div>
         )
       }}

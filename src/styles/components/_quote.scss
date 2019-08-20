@@ -1,0 +1,66 @@
+.quote-container {
+  height: 70%;
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+  }
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+  }
+}
+
+@media(max-width: 991px) {
+  .quote-container > h1 {
+    font-size: 45px;
+  }
+}
+
+@media(max-width: 860px) {
+  .quote-container {
+    h1 {
+      font-size: 37px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .quote-container {
+    h3 {
+      font-size: 15px;
+      margin: 25px 0;
+    }
+  }
+}
+
+@media(max-width: 470px) {
+  .quote-container {
+    h1 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media(max-width: 370px) {
+  .quote-container {
+    h1 {
+      font-size: 27px;
+      margin-bottom: 15px;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+}
