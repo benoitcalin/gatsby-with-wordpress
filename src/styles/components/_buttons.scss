@@ -1,0 +1,11 @@
+.button-primary {
+  background-color: $button-blue;
+  border-color: $button-blue;
+  color: $white;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  &:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: $white;
+  }
+}
