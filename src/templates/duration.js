@@ -4,11 +4,11 @@ import React from "react"
 import Layout from "../components/layout"
 // import SEO from "../components/seo"
 
-const Job = (props) => (
+const Duration = (props) => (
   <Layout>
-    <h1>{props.pageContext.slug}</h1>
+    <h1 style={{ paddingTop: '100px' }}>{props.pageContext.slug}</h1>
     <h5>{props.pageContext.title}</h5>
   </Layout>
 )
 
-export default Job
+export default Duration

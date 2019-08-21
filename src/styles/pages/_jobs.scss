@@ -29,7 +29,14 @@
     color: #4D525E;
   }
   &:hover {
-    transform: scale(1.04);
+    transform: scale(1.03);
+    .card-text {
+      background-color: #F7BA45;
+      h6 {
+        color: white;
+        font-weight: 600;
+      }
+    }
   }
 }
 
@@ -47,6 +54,7 @@
     color: #4D525E;
     text-align: center;
     margin: 0;
+    font-weight: 600;
   }
 }
 

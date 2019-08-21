@@ -20,6 +20,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
             node {
               jobs {
                 slug
+                title
               }
             }
           }
@@ -34,6 +35,23 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: require.resolve("./src/templates/job.js"),
       context: {
         slug: job.slug,
+        title: job.title,
+      },
+    })
+    createPage({
+      path: `/jobs/${job.slug}/duration`,
+      component: require.resolve("./src/templates/duration.js"),
+      context: {
+        slug: job.slug,
+        title: job.title,
+      },
+    })
+    createPage({
+      path: `/jobs/${job.slug}/duration/form`,
+      component: require.resolve("./src/templates/form.js"),
+      context: {
+        slug: job.slug,
+        title: job.title,
       },
     })
   })
