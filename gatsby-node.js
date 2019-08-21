@@ -1,19 +1,17 @@
-// Create Home Page
-exports.createPages = async ({ actions: { createPage } }) => {
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  /// 1. Create page Home
   createPage({
     path: `/bonjour/`,
     component: require.resolve("./src/templates/home-page.js"),
   })
-}
 
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  /// 1. Create page job #index
+  /// 2. Create page job #index
   createPage({
     path: `/jobs/`,
     component: require.resolve("./src/templates/jobs.js"),
   })
 
-  /// 2. Create each job #show
+  /// 3. Create each job #show
   const results = await graphql(`
     {
       wpgraphql {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BackgroundImage from 'gatsby-background-image';
-import { Button } from 'react-bootstrap'
+import { Link } from 'gatsby';
 
 const Banner = (props) => (
   <BackgroundImage
@@ -19,7 +19,7 @@ const Banner = (props) => (
     <div className="banner-container">
       <h1>{props.data.title}</h1>
       <h3>{props.data.subtitle}</h3>
-      <Button className="btn button-primary" href='/'>{props.button}</Button>
+      <Link className="btn button-primary" to="/jobs/">{props.button}</Link>
     </div>
   </BackgroundImage>
 )

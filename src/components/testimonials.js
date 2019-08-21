@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { Button } from 'react-bootstrap'
+import { Link } from 'gatsby';
 
 const Testimonials = (props) => (
   <div className="testimonials-container">
@@ -22,7 +22,7 @@ const Testimonials = (props) => (
           );
         })}
     </div>
-    <Button className="btn button-primary" href='/'>{props.button}</Button>
+    <Link className="btn button-primary" to="/jobs/">{props.button}</Link>
   </div>
 )
 
