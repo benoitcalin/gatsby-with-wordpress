@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 const Card = (props) => (
   <div className="col-xl-3 col-lg-4 col-sm-6 col-xs-12 card-col">
-    <Link to={`jobs/${props.job.node.slug}`} className="job-card">
+    <Link to={`/jobs/${props.job.node.slug}`} className="job-card">
       <Img
         style={{
           height: '200px',

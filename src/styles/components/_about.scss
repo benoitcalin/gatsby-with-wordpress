@@ -59,11 +59,6 @@
 }
 
 @media(max-width: 860px) {
-  .about-container {
-    h1 {
-      font-size: 37px;
-    }
-  }
   .about-texts {
     p {
       font-size: 18px;
@@ -78,9 +73,6 @@
 @media(max-width: 767px) {
   .about-container {
     height: auto;
-    h1 {
-      margin: 30px 0;
-    }
   }
   .about-col {
     margin: 20px;
@@ -90,29 +82,8 @@
   }
 }
 
-@media(max-width: 575px) {
-  .about-container {
-    h1 {
-      width: 90%
-    }
-  }
-}
-
 @media(max-width: 470px) {
-  .about-container {
-    h1 {
-      font-size: 32px;
-    }
-  }
   .about-texts {
     width: 100%;
-  }
-}
-
-@media(max-width: 370px) {
-  .about-container {
-    h1 {
-      font-size: 27px;
-    }
   }
 }

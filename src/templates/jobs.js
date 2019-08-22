@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, StaticQuery } from 'gatsby';
-// import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Card from "../components/card"
@@ -14,16 +13,18 @@ const Jobs = () => (
 
         return (
           <div className="jobs-container">
-            <h1 className="text-center">Trouvez le métier qui vous intéresse</h1>
+            <h2>Trouvez le métier qui vous intéresse</h2>
             <div className="row">
               {jobs.map((job) => <Card job={job} key={job.node.slug}/>)}
             </div>
           </div>
         )
       }}
-    />
+      />
   </Layout>
 )
+
+export default Jobs
 
 const QUERY = graphql`
   query METIERS {
@@ -55,4 +56,3 @@ const QUERY = graphql`
   }
 `
 
-export default Jobs

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const Testimonials = (props) => (
   <div className="testimonials-container">
-    <h1 className="text-center">{props.title}</h1>
+    <h2>{props.title}</h2>
     <div className="row testimonials-elements">
         {props.testimonials.map((testimonial) => {
           return (

@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 
 const Form = (props) => (
   <Layout>
-    <h1 style={{ paddingTop: '100px' }}>{props.pageContext.slug}</h1>
+    <h1>{props.pageContext.slug}</h1>
     <h5>{props.pageContext.title}</h5>
   </Layout>
 )

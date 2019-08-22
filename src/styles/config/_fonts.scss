@@ -5,4 +5,20 @@
 
 html, main, body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Open Sans';
+  color: #4D525E;
 }
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+
+// H2s
+h2 { font-size: 45px; text-align: center;}
+@media(max-width: 991px) { h2 { font-size: 42px; } }
+@media(max-width: 860px) { h2 { font-size: 37px; } }
+@media(max-width: 767px) { h2 { margin: 30px 0; } }
+@media(max-width: 575px) { h2 { width: 90%; } }
+@media(max-width: 470px) { h2 { font-size: 32px; } }
+@media(max-width: 370px) { h2 { font-size: 27px; } }

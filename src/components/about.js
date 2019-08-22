@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 const About = (props) => (
   <div className="about-container">
-    <h1 className="text-center">{props.data.title}</h1>
+    <h2>{props.data.title}</h2>
     <div className="about-elements">
       <div className="row w-100">
         <div className="col-md-4 about-col">

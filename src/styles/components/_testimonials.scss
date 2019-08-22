@@ -48,11 +48,6 @@
 }
 
 @media(max-width: 991px) {
-  .testimonials-container {
-    h1 {
-      font-size: 40px;
-    }
-  }
   .testimonials-elements {
     width: 100%;
   }
@@ -61,9 +56,6 @@
 @media(max-width: 767px) {
   .testimonials-container {
     height: auto;
-    h1 {
-      margin: 30px 0;
-    }
   }
   .testimonial-container {
     width: 50%;
@@ -72,12 +64,6 @@
 }
 
 @media(max-width: 575px) {
-  .testimonials-container {
-    h1 {
-      width: 90%;
-      font-size: 37px;
-    }
-  }
   .testimonial-container {
     width: 50%;
     margin: 10px;
@@ -85,20 +71,7 @@
 }
 
 @media(max-width: 470px) {
-  .testimonials-container {
-    h1 {
-      font-size: 32px;
-    }
-  }
   .testimonial-container {
     width: 80%;
-  }
-}
-
-@media(max-width: 370px) {
-  .testimonials-container {
-    h1 {
-      font-size: 27px;
-    }
   }
 }
