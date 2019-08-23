@@ -1,7 +1,7 @@
 exports.createPages = async ({ actions: { createPage }, graphql }) => {
   /// 1. Create page Home
   createPage({
-    path: `/bonjour/`,
+    path: `/`,
     component: require.resolve("./src/templates/home-page.js"),
   })
 
