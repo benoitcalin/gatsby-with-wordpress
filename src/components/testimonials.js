@@ -10,13 +10,19 @@ const Testimonials = (props) => (
           return (
             <div className="col-md-4 h-100 testimonial-col" key={testimonial.title}>
               <div className="testimonial-container">
-                <h2>''</h2>
-                <p className="text-center">{testimonial.text}</p>
+                <img
+                  src="https://metroboulododo.fr/wp-content/uploads/2019/08/quotes.png"
+                  alt='quotes'
+                  className="quotes"
+                />
+                <p className="text-center d-flex align-items-center" style={{minHeight: '90px'}}>
+                  {testimonial.text}
+                </p>
                 <Img
                   fluid={testimonial.image.imageFile.childImageSharp.fluid}
                   className='testimonial-image'
                 />
-                <h5 className="text-center">{testimonial.title}</h5>
+                <h5 className="text-center" style={{ width: '95%' }}>{testimonial.title}</h5>
               </div>
             </div>
           );
