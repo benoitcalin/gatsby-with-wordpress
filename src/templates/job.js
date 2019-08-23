@@ -1,7 +1,8 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Video from "../components/video"
+import Skill from "../components/skill"
 
 // import SEO from "../components/seo"
 const Job = (props) => {
@@ -9,11 +10,42 @@ const Job = (props) => {
   return (
     <Layout>
       <div id="job-container">
+
+        <div id="ariane">
+          Accueil > Nos métiers > Ebénisterie
+        </div>
+
         <h3>{job.header.title}</h3>
         <Video
           videoSrcURL={job.header.video.url}
           videoTitle={job.header.video.title}
         />
+
+        <div className="job-first-row row">
+          <div className="job-description col-xs-12 col-md-6">
+            <h4>{job.presentation.description.title}</h4>
+            <p>{job.presentation.description.text}</p>
+          </div>
+          <div className="job-access-and-skills col-xs-12 col-md-6">
+            <h4>{job.presentation.skills.title}</h4>
+            <p>{job.presentation.skills.text}</p>
+            <div className="skill-list">
+              <Skill title={job.presentation.skills.list.skill1} />
+              <Skill title={job.presentation.skills.list.skill2} />
+              <Skill title={job.presentation.skills.list.skill3} />
+              <Skill title={job.presentation.skills.list.skill4} />
+            </div>
+          </div>
+        </div>
+        <div className="job-second-row row">
+          <div className="col-sm">
+            <Link className="btn button-primary" to="/jobs/">TESTER CE METIER</Link>
+          </div>
+          <div>
+
+          </div>
+        </div>
+
       </div>
     </Layout>
   )
@@ -45,6 +77,7 @@ export default Job
 //       }
 //     }
 //   }
+  // >>>>>
 //   market {
 //     title
 //     text

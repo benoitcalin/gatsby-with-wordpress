@@ -1,0 +1,71 @@
+#job-container {
+
+  #ariane {
+    height: 50px;
+  }
+
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  h3 {
+    margin: 30px 60px;
+  }
+
+  .video {
+    margin: 40px 10%;
+    width: 80%;
+    height: 35vw;
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .job-first-row {
+    margin: 30px 40px 10px 40px;
+
+
+    .job-access-and-skills, .job-description {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      h4 {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        color: #3C424F;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      width: 100%;
+      .skill {
+        color: white;
+        font-size: 14px;
+        padding: 2px 14px;
+        margin: 4px;
+        border: #f7ba44;
+        border-radius: 20px;
+        background-color: #f7ba44;
+      }
+    }
+  }
+
+
+  .job-second-row {
+
+  }
+}
+
+
