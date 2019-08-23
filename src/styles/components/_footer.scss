@@ -1,3 +1,10 @@
 .footer {
-  height: 50px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
 }
