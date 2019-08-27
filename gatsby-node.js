@@ -206,6 +206,21 @@ const QUERY = `
                   testimonials {
                     title
                     testimonial1 {
+                      image {
+                        altText
+                        sourceUrl
+                        imageFile {
+                          childImageSharp {
+                            fluid(maxWidth: 1000) {
+                              src
+                              srcSet
+                              aspectRatio
+                              sizes
+                              base64
+                            }
+                          }
+                        }
+                      }
                       name
                       age
                       text1
@@ -213,6 +228,21 @@ const QUERY = `
                       text3
                     }
                     testimonial2 {
+                      image {
+                        altText
+                        sourceUrl
+                        imageFile {
+                          childImageSharp {
+                            fluid(maxWidth: 1000) {
+                              src
+                              srcSet
+                              aspectRatio
+                              sizes
+                              base64
+                            }
+                          }
+                        }
+                      }
                       name
                       age
                       text1
@@ -220,6 +250,21 @@ const QUERY = `
                       text3
                     }
                     testimonial3 {
+                      image {
+                        altText
+                        sourceUrl
+                        imageFile {
+                          childImageSharp {
+                            fluid(maxWidth: 1000) {
+                              src
+                              srcSet
+                              aspectRatio
+                              sizes
+                              base64
+                            }
+                          }
+                        }
+                      }
                       name
                       age
                       text1
