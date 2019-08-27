@@ -46,15 +46,15 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         job: job,
       },
     })
-    /// 3.3. Create each job form
-    createPage({
-      path: `/jobs/${job.slug}/duration/form`,
-      component: require.resolve("./src/templates/form.js"),
-      context: {
-        slug: job.slug,
-        title: job.title,
-      },
-    })
+  //   /// 3.3. Create each job form
+  //   createPage({
+  //     path: `/jobs/${job.slug}/duration/form`,
+  //     component: require.resolve("./src/templates/form.js"),
+  //     context: {
+  //       slug: job.slug,
+  //       title: job.title,
+  //     },
+  //   })
   })
 }
 
