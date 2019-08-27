@@ -29,17 +29,20 @@ export default class Header extends React.Component {
 
           return (
             <div className='header'>
+                <Link to='/'>
               <div className="header-logo">
-                {/* <Img
-                  fluid={logo.imageFile.childImageSharp.fluid}
-                  alt={logo.alt}
-                  loading='auto'
-                /> */}
-                <img
-                  src="https://metroboulododo.fr/wp-content/uploads/2019/08/Logo.png"
-                  alt='logo'
-                />
+                  {/* <Img
+                    fluid={logo.imageFile.childImageSharp.fluid}
+                    alt={logo.alt}
+                    loading='auto'
+                  /> */}
+                    <img
+                      src="https://metroboulododo.fr/wp-content/uploads/2019/08/Logo.png"
+                      alt='logo'
+                    />
+
               </div>
+                </Link>
               <div className='header-links'>
                 <Link className='linky' to='/'>CONCEPT</Link>
                 <Link className='linky' to='/jobs'>METIERS</Link>
