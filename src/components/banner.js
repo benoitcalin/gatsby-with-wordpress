@@ -5,15 +5,7 @@ import { Link } from 'gatsby';
 
 const Banner = (props) => (
   <BackgroundImage
-    style={{
-      height: '100vh',
-      width: '100vw',
-      background: 'fit',
-      backgroundPosition: 'top',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}
+    className='banner-background'
     fluid={props.data.image.imageFile.childImageSharp.fluid}
   >
     <div className="banner-container">

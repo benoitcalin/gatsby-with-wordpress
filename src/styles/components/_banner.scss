@@ -18,6 +18,16 @@
   }
 }
 
+.banner-background {
+  height: calc(100vh - 100px);
+  width: 100vw;
+  background: fit;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media(max-width: 991px) {
   .banner-container {
     h1 {
