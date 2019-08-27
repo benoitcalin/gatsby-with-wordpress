@@ -40,13 +40,15 @@ export default class Form extends React.Component {
       }
     }
   }
-  // setValue = (type) => {
-  //   if (this.props.location.state) {
-  //     return this.props.location.state[type]
-  //   } else {
-  //     return ""
-  //   }
-  // }
+  setValue = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.pack) {
+        return `${this.props.location.state.job} - ${this.props.location.state.pack} - ${this.props.location.state.duration}`
+      }
+    } else {
+      return ""
+    }
+  }
   handleInputChange = event => {
     const target = event.target
     const value = target.value
@@ -143,19 +145,19 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            {/* <div className={this.displayInput()}>
+            <div className='d-none'>
               <label>
-                Métier choisi
+                Informations du choix client
               </label>
               <input
                 className="form-control"
                 type="text"
-                name="choosenJob"
-                value={this.setValue('job')}
+                name="information"
+                value={this.setValue()}
                 readOnly
               />
             </div>
-            <div className={this.displayInput()}>
+            {/* <div className={this.displayInput()}>
               <label>
                 Durée souhaitée
               </label>
