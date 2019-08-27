@@ -32,7 +32,7 @@
 
 .duration-card-container {
   height: 100%;
-  width: 100%;
+  width: 70%;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -42,11 +42,28 @@
   box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
   p {
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     margin: 20px 0;
     height:80px;
     display:flex;
     align-items: center;
+  }
+}
+
+@media(max-width: 1160px) {
+  .duration-card-container {
+    width: 100%
+  }
+}
+
+@media(max-width: 835px) {
+  .duration-card-container {
+    p { font-size: 14px;}
+  }
+}
+@media(max-width: 620px) {
+  .duration-card-container {
+    p { font-size: 13px;}
   }
 }
 

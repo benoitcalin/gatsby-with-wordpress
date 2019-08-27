@@ -24,10 +24,13 @@ const Layout = ({ children }) => {
           <div style={{ paddingTop: '100px' }}></div>
           {children}
         </main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer className="footer">
+          <div className='d-flex align-items-center' style={{marginLeft: '20px'}}>
+            <p>© {new Date().getFullYear()}, Metroboulododo</p>
+          </div>
+          <div className='d-flex align-items-center' style={{ marginRight: '20px' }}>
+            <p>Mentions Légales</p>
+          </div>
         </footer>
       </div>
     </>

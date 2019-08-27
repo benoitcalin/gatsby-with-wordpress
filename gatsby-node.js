@@ -11,6 +11,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/templates/jobs.js"),
   })
 
+  createPage({
+    path: `/contact/`,
+    component: require.resolve("./src/templates/form.js"),
+  })
+
+  createPage({
+    path: `/pro/contact/`,
+    component: require.resolve("./src/templates/form.js"),
+  })
+
   /// 3. Create each job pages
   const results = await graphql(QUERY)
   results.data.wpgraphql.posts.edges.forEach(edge => {
@@ -171,12 +181,7 @@ const QUERY = `
                     skills {
                       title
                       text
-                      list {
-                        skill1
-                        skill2
-                        skill3
-                        skill4
-                      }
+                      list
                     }
                   }
                   market {
