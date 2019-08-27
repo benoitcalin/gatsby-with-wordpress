@@ -30,16 +30,13 @@ const Job = (props) => {
             <h4>{job.presentation.skills.title}</h4>
             <p>{job.presentation.skills.text}</p>
             <div className="skill-list">
-              <Skill title={job.presentation.skills.list.skill1} />
-              <Skill title={job.presentation.skills.list.skill2} />
-              <Skill title={job.presentation.skills.list.skill3} />
-              <Skill title={job.presentation.skills.list.skill4} />
+
             </div>
           </div>
         </div>
         <div className="job-second-row row">
           <div className="col-sm">
-            <Link className="btn button-primary" to="/jobs/">TESTER CE METIER</Link>
+            <Link className="btn button-primary" to={`/jobs/${props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
           </div>
           <div>
 
