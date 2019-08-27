@@ -31,8 +31,14 @@ const Header = () => {
             <div className='header-links'>
               <Link className={coloredUrl('/')} to='/'>CONCEPT</Link>
               <Link className={coloredUrl('/jobs')} to='/jobs'>METIERS</Link>
-              <Link className={coloredUrl('/contact')} to='/jobs'>CONTACT</Link>
-              <Link className={coloredUrl('/partnership')} to='/jobs'>DEVENIR PARTENAIRE</Link>
+              <Link className={coloredUrl('/contact')} to='/contact'>CONTACT</Link>
+              <Link
+                className={coloredUrl('/pro/contact')}
+                to='/pro/contact'
+                state={{ prof: true }}
+              >
+                DEVENIR PARTENAIRE
+              </Link>
             </div>
             <div
               id="nav-icon1"

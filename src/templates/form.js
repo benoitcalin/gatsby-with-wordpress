@@ -4,10 +4,6 @@ import Layout from "../components/layout";
 import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from "flatpickr";
 
-flatpickr("#myID", {
-  mode: "range",
-  minDate: "today"
-})
 export default class Form extends React.Component {
   state = {
     firstName: "",
@@ -16,7 +12,41 @@ export default class Form extends React.Component {
     phone: "",
     date: "",
     content: "",
+    job: "",
   }
+  displayInput = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.prof) {
+        return "col-12 col-md-6 form-group"
+      } else { return "col-12 col-md-6 form-group d-none" }
+    } else { return "col-12 col-md-6 form-group d-none" }
+  }
+  displayContent = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.prof) {
+        return(
+          <h5>
+            VOUS SOUHAITEZ FAIRE DÉCOUVRIR VOTRE MÉTIER ET DONNER LA CHANCE AUX PERSONNES INTÉRESSÉES DE DÉCOUVRIR VOTRE SAVOIR-FAIRE, OU DE SE RECONVERTIR DANS VOTRE MÉTIER, ALORS C'EST ICI !
+          </h5>
+        )
+      } else if (this.props.location.state.pack) {
+        return (
+          <h5>
+            VOUS SOUHAITEZ TESTER LE MÉTIER SUIVANT : <strong style={{ color: '#3EAAF4' }}>{this.props.location.state.job}</strong>
+            <br />
+            AVEC LE <strong style={{ color: '#3EAAF4' }}>{this.props.location.state.pack}</strong> POUR UNE DURÉE DE <strong style={{ color: '#3EAAF4' }}>{this.props.location.state.duration}</strong>
+          </h5>
+        )
+      }
+    }
+  }
+  // setValue = (type) => {
+  //   if (this.props.location.state) {
+  //     return this.props.location.state[type]
+  //   } else {
+  //     return ""
+  //   }
+  // }
   handleInputChange = event => {
     const target = event.target
     const value = target.value
@@ -24,16 +54,25 @@ export default class Form extends React.Component {
     this.setState({
       [name]: value,
     })
-  }
-  handleSubmit = event => {
-    event.preventDefault()
-    alert(`Welcome ${this.state.firstName} ${this.state.lastName}!`)
+    flatpickr("#myID", {
+      mode: "range",
+      minDate: "today"
+    })
   }
   render() {
     return (
       <Layout>
-        <div className="form-title">
-          <h2 style={{margin: '50px 0'}}>Nous contacter</h2>
+        <div className="form-header">
+          <div className="form-title">
+            <h2 style={{margin: '50px 0'}}>Nous contacter</h2>
+          </div>
+          <div className="form-subtitle">
+            {this.displayContent()}
+            {/*  */}
+          </div>
+          <div className="form-subtitle">
+            {/*  */}
+          </div>
         </div>
         <div className='form-container'>
           <form
@@ -92,6 +131,42 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
               />
             </div>
+            <div className={this.displayInput()}>
+              <label>
+                Profession
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                name="job"
+                value={this.state.job}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            {/* <div className={this.displayInput()}>
+              <label>
+                Métier choisi
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                name="choosenJob"
+                value={this.setValue('job')}
+                readOnly
+              />
+            </div>
+            <div className={this.displayInput()}>
+              <label>
+                Durée souhaitée
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                name="duration"
+                value={this.setValue('duration')}
+                readOnly
+              />
+            </div> */}
             <div className="col-12 form-group">
               <label>
                 Disponibilité
@@ -119,11 +194,11 @@ export default class Form extends React.Component {
               />
             </div>
             <div className="submit-zone">
-              <p><span style={{ color: 'red' }}>*</span> Ces champs sont obligatoires</p>
               <div className='d-flex align-items-center' style={{marginBottom: '16px'}}>
                 <input type="checkbox" name="CGU" required/>
-                <p style={{ margin: '0 0 0 15px' }}>J'ai prix connaissance et accepte CGU.<span>*</span></p>
+                <p style={{ margin: '0 0 0 15px' }}>J'ai pris connaissance et accepte les CGU <span style={{ color: 'red' }}>*</span></p>
               </div>
+              <p><span style={{ color: 'red' }}>*</span> Ces champs sont obligatoires</p>
               <button type="submit" className='btn button-primary'>ENVOYER</button>
             </div>
           </form>

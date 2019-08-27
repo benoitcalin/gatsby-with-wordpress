@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 
 const Features = (props) => (
   <div className="features-container">
+    <h2>{props.title}</h2>
     <div className='row features-row'>
     {props.data.map((feature) => {
       return (

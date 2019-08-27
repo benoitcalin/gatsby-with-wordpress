@@ -4,12 +4,33 @@
   justify-content: center;
 }
 
+.form-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .form-title {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 90%;
   h2 {
     margin: 50px 0;
+    text-align: center;
+  }
+}
+
+.form-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  h5 {
+    margin-bottom: 40px;
+    font-size: 18px;
+    line-height: 27px;
     text-align: center;
   }
 }
@@ -35,6 +56,12 @@ textarea {
   flex-direction: column;
 }
 
+.form-subtitle {
+  @media(max-width: 991px) { h5 { font-size: 17px; } }
+  @media(max-width: 860px) { h5 { font-size: 16px; } }
+  @media(max-width: 470px) { h5 { font-size: 15px; } }
+  @media(max-width: 370px) { h5 { font-size: 13px; } }
+}
 
 @media(max-width: 575px) {
   .form-row {
