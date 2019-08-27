@@ -8,7 +8,7 @@ const Header = () => {
   }
 
   const coloredUrl = (relativeUrl) => {
-    if (window) {
+    if (typeof window !== 'undefined') {
       if (window.location.pathname === relativeUrl) {
         return 'colored-link'
       }
