@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Video from "../components/video"
 import Skill from "../components/skill"
 import Img from 'gatsby-image'
+import Recomendation from "../components/recomendation"
 
 // import SEO from "../components/seo"
 const Job = (props) => {
@@ -62,11 +63,31 @@ const Job = (props) => {
 
         <div className="job-fourth-row row">
           <h3>{job.testimonials.title}</h3>
-          <div className="testimonial-list">
+          <div className="recomendation-list">
 
+            <Recomendation
+              name={job.testimonials.testimonial1.name}
+              age={job.testimonials.testimonial1.age}
+              text1={job.testimonials.testimonial1.text1}
+              text2={job.testimonials.testimonial1.text2}
+              text3={job.testimonials.testimonial1.text3}
+            />
+            <Recomendation
+              name={job.testimonials.testimonial2.name}
+              age={job.testimonials.testimonial2.age}
+              text1={job.testimonials.testimonial2.text1}
+              text2={job.testimonials.testimonial2.text2}
+              text3={job.testimonials.testimonial2.text3}
+            />
+            <Recomendation
+              name={job.testimonials.testimonial3.name}
+              age={job.testimonials.testimonial3.age}
+              text1={job.testimonials.testimonial3.text1}
+              text2={job.testimonials.testimonial3.text2}
+              text3={job.testimonials.testimonial3.text3}
+            />
 
           </div>
-
         </div>
 
       </div>
