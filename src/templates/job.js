@@ -3,10 +3,12 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Video from "../components/video"
 import Skill from "../components/skill"
+import Img from 'gatsby-image'
 
 // import SEO from "../components/seo"
 const Job = (props) => {
   const job = props.pageContext.job.page;
+  const skills = job.presentation.skills.list.split(" // ");
   return (
     <Layout>
       <div id="job-container">
@@ -30,17 +32,41 @@ const Job = (props) => {
             <h4>{job.presentation.skills.title}</h4>
             <p>{job.presentation.skills.text}</p>
             <div className="skill-list">
-
+              {
+                skills.map((skill) => <Skill title={skill} key={skill} />
+                )
+              }
             </div>
           </div>
         </div>
+
         <div className="job-second-row row">
           <div className="col-sm">
             <Link className="btn button-primary" to={`/jobs/${props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
           </div>
-          <div>
+        </div>
+
+        <div className="job-third-row row">
+          <h4>{job.market.title}</h4>
+          <div className="job-market">
+            <div className="job-market-content">
+              <Img className="job-image"
+                fluid={job.market.image.imageFile.childImageSharp.fluid}
+              />
+            </div>
+            <div className="job-market-content">
+              <p>{job.market.text}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="job-fourth-row row">
+          <h3>{job.testimonials.title}</h3>
+          <div className="testimonial-list">
+
 
           </div>
+
         </div>
 
       </div>
@@ -66,15 +92,9 @@ export default Job
 //     skills {
 //       title
 //       text
-//       list {
-//         skill1
-//         skill2
-//         skill3
-//         skill4
-//       }
+//       list
 //     }
 //   }
-  // >>>>>
 //   market {
 //     title
 //     text
@@ -94,6 +114,7 @@ export default Job
 //       }
 //     }
 //   }
+// >>>>>>>>>>>>>>>>>>>>
 //   testimonials {
 //     title
 //     testimonial1 {
