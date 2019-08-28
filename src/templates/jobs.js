@@ -30,6 +30,18 @@ export default class Jobs extends React.Component {
 
   }
 
+  setContent = (jobs) => {
+    if (jobs.length > 0) {
+      return this.state.jobs.map((job) => <Card job={job} key={job.node.jobs.slug} />)
+    } else {
+      return (
+        <p className='text-center' style={{width: '90%', marginTop:'20px'}}>
+          Vous n'avez pas trouvé le métier qui vous intéresse ? <Link to='/contact'>Contactez-nous</Link>
+        </p>
+      )
+    }
+  }
+
   render() {
     return (
       <Layout>
@@ -47,7 +59,7 @@ export default class Jobs extends React.Component {
               placeHolder="Rechercher un métier"
             />
             <div className="flex-container">
-              {this.state.jobs.map((job) => <Card job={job} key={job.node.jobs.slug} />)}
+              {this.setContent(this.state.jobs)}
             </div>
           </div>
         </div>

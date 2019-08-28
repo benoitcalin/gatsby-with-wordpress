@@ -19,9 +19,9 @@
 
 .jobs-container {
   width: 100vw;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: #4D525E;
   h2 {
