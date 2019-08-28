@@ -9,6 +9,14 @@ const Duration = (props) => {
   const duration = props.pageContext.job.duration
   return (
     <Layout>
+      <div className="follow-up-links">
+        <div>
+          <Link to='/'>Accueil</Link> >
+          <Link to='/jobs'> Nos Métiers</Link> >
+          <Link to={`/jobs/${props.pageContext.slug}`}> {props.pageContext.title}</Link> >
+          <span> Durée</span>
+        </div>
+      </div>
       <div className="duration-container">
         <h2>{duration.title}</h2>
         <h5 className="duration-subtitle">{duration.subtitle}</h5>

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery, Link } from 'gatsby';
 
 import Layout from "../components/layout"
 import Card from "../components/card"
@@ -12,10 +12,17 @@ const Jobs = () => (
         const jobs = data.wpgraphql.posts.edges
 
         return (
-          <div className="jobs-container">
-            <h2>Trouvez le métier qui vous intéresse</h2>
-            <div className="row">
-              {jobs.map((job) => <Card job={job} key={job.node.slug}/>)}
+          <div>
+            <div className="follow-up-links">
+              <div>
+                <Link to='/'>Accueil</Link> > <span>Nos Métiers</span>
+              </div>
+            </div>
+            <div className="jobs-container">
+              <h2>Trouvez le métier qui vous intéresse</h2>
+              <div className="row">
+                {jobs.map((job) => <Card job={job} key={job.node.slug}/>)}
+              </div>
             </div>
           </div>
         )
