@@ -5,14 +5,19 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/templates/home-page.js"),
   })
 
+  // GET JOBS INFOS
+  const results = await graphql(QUERY)
+
   /// 2. Create page job #index
   createPage({
     path: `/jobs/`,
     component: require.resolve("./src/templates/jobs.js"),
+    context: {
+      jobs: results.data.wpgraphql.posts.edges
+    }
   })
 
   /// 3. Create each job pages
-  const results = await graphql(QUERY)
   results.data.wpgraphql.posts.edges.forEach(edge => {
     const job = edge.node.jobs
     /// 3.1. Create each job Show
