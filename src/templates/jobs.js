@@ -56,7 +56,7 @@ export default class Jobs extends React.Component {
             <input
               className='form-control search-bar effect-12'
               onChange={this.handleChange}
-              placeHolder="Rechercher un métier"
+              placeholder="Rechercher un métier"
             />
             <div className="flex-container">
               {this.setContent(this.state.jobs)}
