@@ -30,8 +30,6 @@ export default class Jobs extends React.Component {
 
   render() {
     const job = this.props.pageContext.job.page;
-    const skills = job.presentation.skills.list.split(" // ");
-    const formations = job.presentation.skills.text.split(" // ");
 
     return (
       <Layout>
@@ -62,7 +60,7 @@ export default class Jobs extends React.Component {
               <h5>{job.presentation.skills.title}</h5>
               <div className="access-list">
                 {
-                  formations.map((formation, index) => {
+                  job.presentation.skills.text.split(" // ").map((formation, index) => {
                     if(index % 2 === 0) {
                       return (
                         <p key={formation}><strong>{formation}</strong></p>
@@ -77,7 +75,7 @@ export default class Jobs extends React.Component {
               </div>
               <div className="skill-list">
                 {
-                  skills.map((skill) => <Skill title={skill} key={skill} />
+                  job.presentation.skills.list.split(" // ").map((skill) => <Skill title={skill} key={skill} />
                   )
                 }
               </div>
