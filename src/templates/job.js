@@ -27,7 +27,9 @@ export default class Jobs extends React.Component {
   }
 
   splitText = (text) => {
-    return text.split(" // ")
+    if (text) {
+      return text.split(" // ")
+    }
   }
 
   render() {
