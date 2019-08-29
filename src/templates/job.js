@@ -23,9 +23,11 @@ export default class Jobs extends React.Component {
   }
 
   scrollTop = () => {
-    if (window) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  splitText = (text) => {
+    return text.split(" // ")
   }
 
   render() {
@@ -53,14 +55,14 @@ export default class Jobs extends React.Component {
             <div className="job-description col-xs-12 col-md-6">
               <h5>{job.presentation.description.title}</h5>
               {
-                job.presentation.description.text.split(" // ").map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                this.splitText(job.presentation.description.text).map((paragraph) => <p key={paragraph}>{paragraph}</p>)
               }
             </div>
             <div className="job-access-and-skills col-xs-12 col-md-6">
               <h5>{job.presentation.skills.title}</h5>
               <div className="access-list">
                 {
-                  job.presentation.skills.text.split(" // ").map((formation, index) => {
+                  this.splitText(job.presentation.skills.text).map((formation, index) => {
                     if(index % 2 === 0) {
                       return (
                         <p key={formation}><strong>{formation}</strong></p>
@@ -75,7 +77,7 @@ export default class Jobs extends React.Component {
               </div>
               <div className="skill-list">
                 {
-                  job.presentation.skills.list.split(" // ").map((skill) => <Skill title={skill} key={skill} />
+                  this.splitText(job.presentation.skills.list).map((skill) => <Skill title={skill} key={skill} />
                   )
                 }
               </div>
