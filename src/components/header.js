@@ -5,6 +5,7 @@ import React from "react"
 export default class Header extends React.Component {
   handleClick = () => (event) => {
     event.currentTarget.classList.toggle('open')
+    document.getElementById('navbar-main-collapse').classList.toggle('active')
   }
 
   componentDidMount() {
@@ -72,10 +73,16 @@ export default class Header extends React.Component {
                 className="collapse navbar-collapse"
                 id="navbar-main-collapse"
               >
-                {/* <Link>CONCEPT</Link>
-                <Link>METIERS</Link>
-                <Link>CONTACT</Link>
-                <Link>DEVENIR PARTENAIRE</Link> */}
+                <Link className='linky' to='/'>CONCEPT</Link>
+                <Link className='linky' to='/jobs'>METIERS</Link>
+                <Link className='linky' to='/contact'>CONTACT</Link>
+                <Link
+                  className='linky'
+                  to='/pro/contact'
+                  state={{ prof: true }}
+                >
+                  DEVENIR PARTENAIRE
+                </Link>
               </div>
             </div>
           )
