@@ -28,8 +28,11 @@ export default class Jobs extends React.Component {
 
   splitText = (text) => {
     if (text) {
-      return text.split(" // ")
-    } else { return "" }
+      console.log(text)
+      if (Array.isArray(text.split(" // "))) {
+        return text.split(" // ")
+      } else { return [text] }
+    } else { return [""] }
   }
 
   render() {
