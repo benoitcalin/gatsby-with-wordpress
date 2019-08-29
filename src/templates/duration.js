@@ -9,6 +9,14 @@ const Duration = (props) => {
   const duration = props.pageContext.job.duration
   return (
     <Layout>
+      <div className="follow-up-links">
+        <div>
+          <Link to='/'>Accueil</Link> >
+          <Link to='/jobs'> Nos Métiers</Link> >
+          <Link to={`/jobs/${props.pageContext.slug}`}> {props.pageContext.title}</Link> >
+          <span> Durée</span>
+        </div>
+      </div>
       <div className="duration-container">
         <h2>{duration.title}</h2>
         <h5 className="duration-subtitle">{duration.subtitle}</h5>
@@ -29,13 +37,14 @@ const Duration = (props) => {
               />
               <p>{duration.card1.text}</p>
               <Link
-                to={`/jobs/${props.pageContext.slug}/duration/form`}
+                to={`/contact`}
                 className="btn button-primary"
                 style={{ width: '70%', margin: '10px' }}
                 state={{
-                  duration: `${duration.card1.subtitle}`,
-                  job: `${props.pageContext.job.card.title}`,
-                  pack: `${duration.card1.title}`
+                  duration: duration.card1.subtitle,
+                  job: props.pageContext.job.card.title,
+                  pack: duration.card1.title,
+                  slug: props.pageContext.slug
                 }}
               >
                 {duration.card1.button}
@@ -57,13 +66,14 @@ const Duration = (props) => {
               />
               <p>{duration.card2.text}</p>
               <Link
-                to={`/jobs/${props.pageContext.slug}/duration/form`}
+                to={`/contact`}
                 className="btn button-primary"
                 style={{ width: '70%', margin: '10px'}}
                 state={{
-                  duration: `${duration.card2.subtitle}`,
-                  job: `${props.pageContext.job.card.title}`,
-                  pack: `${duration.card2.title}`
+                  duration: duration.card2.subtitle,
+                  job: props.pageContext.job.card.title,
+                  pack: duration.card2.title,
+                  slug: props.pageContext.slug
                 }}
               >
                 {duration.card2.button}

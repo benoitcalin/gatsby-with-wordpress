@@ -9,12 +9,16 @@
   z-index: 100;
 }
 
-.header-logo {
+a {
   height: 100%;
-  width: 170px;
-  margin-left: 25px;
-  .gatsby-image-wrapper {
-    margin-top: 9px;
+  .header-logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    img {
+      height: 80%;
+    }
   }
 }
 
@@ -44,7 +48,7 @@
 
 #nav-icon1 {
   width: 60px;
-  height: 35px;
+  height: 26px;
   margin: 0 25px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -120,11 +124,14 @@
 }
 
 @media(max-width: 400px) {
-  .header-logo {
-    height: 80%;
-    width: 140px;
-    .gatsby-image-wrapper {
-      margin-top: 6px;
+  a {
+    .header-logo {
+      img {
+        height: 70%;
+      }
+      .gatsby-image-wrapper {
+        margin-top: 6px;
+      }
     }
   }
   #nav-icon1 span {

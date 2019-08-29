@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'gatsby'
 import Layout from "../components/layout";
 
 import 'flatpickr/dist/flatpickr.min.css';
@@ -13,6 +14,7 @@ export default class Form extends React.Component {
     date: "",
     content: "",
     job: "",
+    information: "",
   }
   displayInput = () => {
     if (this.props.location.state) {
@@ -40,13 +42,37 @@ export default class Form extends React.Component {
       }
     }
   }
-  // setValue = (type) => {
-  //   if (this.props.location.state) {
-  //     return this.props.location.state[type]
-  //   } else {
-  //     return ""
-  //   }
-  // }
+  displayLinks = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.pack) {
+        return (
+          <div>
+            <Link to='/'>Accueil</Link> >
+            <Link to='/jobs'> Nos Métiers</Link> >
+            <Link to={`/jobs/${this.props.pageContext.slug}`}> {this.props.pageContext.title}</Link> >
+            <Link to={`/jobs/${this.props.pageContext.slug}/duration`}> Durée</Link> >
+            <span> Formulaire</span>
+          </div>
+        )
+      } else {
+        return (
+          <div>
+            <Link to='/'>Accueil</Link> >
+            <span> Formulaire</span>
+          </div>
+        )
+      }
+    }
+  }
+  setValue = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.pack) {
+        return `${this.props.location.state.job} - ${this.props.location.state.pack} - ${this.props.location.state.duration}`
+      }
+    } else {
+      return ""
+    }
+  }
   handleInputChange = event => {
     const target = event.target
     const value = target.value
@@ -59,19 +85,19 @@ export default class Form extends React.Component {
       minDate: "today"
     })
   }
+
   render() {
     return (
       <Layout>
+        <div className="follow-up-links">
+          {this.displayLinks()}
+        </div>
         <div className="form-header">
           <div className="form-title">
             <h2 style={{margin: '50px 0'}}>Nous contacter</h2>
           </div>
           <div className="form-subtitle">
             {this.displayContent()}
-            {/*  */}
-          </div>
-          <div className="form-subtitle">
-            {/*  */}
           </div>
         </div>
         <div className='form-container'>
@@ -143,30 +169,18 @@ export default class Form extends React.Component {
                 onChange={this.handleInputChange}
               />
             </div>
-            {/* <div className={this.displayInput()}>
+            <div className='d-none'>
               <label>
-                Métier choisi
+                Informations du choix client
               </label>
               <input
                 className="form-control"
                 type="text"
-                name="choosenJob"
-                value={this.setValue('job')}
-                readOnly
+                name="information"
+                value={this.setValue()}
+                onChange={this.handleInputChange}
               />
             </div>
-            <div className={this.displayInput()}>
-              <label>
-                Durée souhaitée
-              </label>
-              <input
-                className="form-control"
-                type="text"
-                name="duration"
-                value={this.setValue('duration')}
-                readOnly
-              />
-            </div> */}
             <div className="col-12 form-group">
               <label>
                 Disponibilité

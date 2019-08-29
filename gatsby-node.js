@@ -5,24 +5,19 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/templates/home-page.js"),
   })
 
+  // GET JOBS INFOS
+  const results = await graphql(QUERY)
+
   /// 2. Create page job #index
   createPage({
     path: `/jobs/`,
     component: require.resolve("./src/templates/jobs.js"),
-  })
-
-  createPage({
-    path: `/contact/`,
-    component: require.resolve("./src/templates/form.js"),
-  })
-
-  createPage({
-    path: `/pro/contact/`,
-    component: require.resolve("./src/templates/form.js"),
+    context: {
+      jobs: results.data.wpgraphql.posts.edges
+    }
   })
 
   /// 3. Create each job pages
-  const results = await graphql(QUERY)
   results.data.wpgraphql.posts.edges.forEach(edge => {
     const job = edge.node.jobs
     /// 3.1. Create each job Show
@@ -46,14 +41,19 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         job: job,
       },
     })
-    /// 3.3. Create each job form
+  //   /// 3.3. Create each form
     createPage({
-      path: `/jobs/${job.slug}/duration/form`,
+      path: `/contact/`,
       component: require.resolve("./src/templates/form.js"),
       context: {
         slug: job.slug,
         title: job.title,
       },
+    })
+
+    createPage({
+      path: `/pro/contact/`,
+      component: require.resolve("./src/templates/form.js"),
     })
   })
 }
