@@ -35,6 +35,12 @@ export default class Jobs extends React.Component {
     } else { return [""] }
   }
 
+  getImage = (image) => {
+    if (image) {
+      return image.imageFile.childImageSharp.fluid
+    } else { return "" }
+  }
+
   render() {
     const job = this.props.pageContext.job.page;
 
@@ -119,7 +125,7 @@ export default class Jobs extends React.Component {
             <div className="recomendation-list">
 
               <Recomendation
-                image={job.testimonials.testimonial1.image.imageFile.childImageSharp.fluid}
+                image={this.getImage(job.testimonials.testimonial1.image)}
                 name={job.testimonials.testimonial1.name}
                 age={job.testimonials.testimonial1.age}
                 text1={job.testimonials.testimonial1.text1}
@@ -128,7 +134,7 @@ export default class Jobs extends React.Component {
               />
               <div className="yellow-bar"></div>
               <Recomendation
-                image={job.testimonials.testimonial2.image.imageFile.childImageSharp.fluid}
+                image={this.getImage(job.testimonials.testimonial2.image)}
                 name={job.testimonials.testimonial2.name}
                 age={job.testimonials.testimonial2.age}
                 text1={job.testimonials.testimonial2.text1}
@@ -137,7 +143,7 @@ export default class Jobs extends React.Component {
               />
               <div className="yellow-bar"></div>
               <Recomendation
-                image={job.testimonials.testimonial3.image.imageFile.childImageSharp.fluid}
+                image={this.getImage(job.testimonials.testimonial3.image)}
                 name={job.testimonials.testimonial3.name}
                 age={job.testimonials.testimonial3.age}
                 text1={job.testimonials.testimonial3.text1}
