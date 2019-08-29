@@ -1,7 +1,7 @@
 #job-container {
 
   h3 {
-    margin: 30px 60px;
+    margin: 30px 0;
     text-align: center;
   }
 
@@ -14,7 +14,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 13px;
     text-align: justify;
   }
 
@@ -28,6 +28,10 @@
   justify-content: flex-start;
   align-items: center;
 
+  .job-title {
+    padding: 0 60px;
+  }
+
   .video {
     margin: 40px 10%;
     width: 80%;
@@ -38,9 +42,17 @@
     }
   }
 
+  .job-row {
+    padding: 0 40px;
+  }
+  @media(max-width: 700px) {
+    .job-row {
+      padding: 0 10px;
+    }
+  }
+
   .job-first-row {
     margin: 30px 0 10px 0;
-    padding: 0 40px;
 
     .job-access-and-skills, .job-description {
       padding: 20px;
@@ -51,6 +63,18 @@
 
       h4 {
         margin-bottom: 15px;
+      }
+
+      .access-list {
+        align-items: flex-start;
+        margin-bottom: 15px;
+
+        p {
+          margin: 0;
+        }
+        .not-strong {
+          padding-left: 25px;
+        }
       }
 
     }
@@ -71,25 +95,35 @@
     }
   }
 
+  svg {
+    margin: 0px 10px 40px 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   .job-second-row {
-    margin-bottom: 100px;
+    display: block;
+    text-align: center;
+    // margin-bottom: 100px;
     padding: 0 40px;
 
   }
 
   .job-third-row {
-    display: block;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
     width: 100%;
     background-color: #f5fafd;
-    padding: 0 60px;
 
     h4 {
+      margin-top: 30px;
       text-align: center;
     }
 
     .job-market {
+      width: 100%;
+      margin-bottom: 30px;
       display: flex;
       flex-direction: row-reverse;
       flex-wrap: wrap;
@@ -112,7 +146,8 @@
   }
 
   .job-fourth-row {
-    padding: 20px 60px;
+    justify-content: center;
+    margin: 20px 0;
     width: 100%;
 
     .recomendation-list {
@@ -120,7 +155,25 @@
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+
+      .yellow-bar {
+        width: 1px;
+        height: 400px;
+        background-color: #f7ba44;
+      }
+      @media(max-width: 1021px) {
+        .yellow-bar {
+          width: 0px;
+          height: 0px;
+          background-color: #FFF;
+        }
+       }
     }
+  }
+
+  .job-fifth-row {
+    display: block;
+    text-align: center;
   }
 }
 

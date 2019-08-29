@@ -1,16 +1,24 @@
 import React from 'react';
-// import Img from 'gatsby-image';
+import Img from 'gatsby-image';
 
 const Recomendation = (props) => {
-  const job = props.pageContext.job.page;
-  render (
+  return (
     <div className="recomendation-container">
-      <Img
-        fluid={testimonial.image.imageFile.childImageSharp.fluid}
-        className='recomendation-image'
+      <div className="recomendation-title">
+        <Img
+          fluid={props.image}
+          className='recomendation-image'
+        />
+        <div className="recomendation-person">
+          <h4>{props.name}</h4>
+          <h5>{props.age}</h5>
+        </div>
+      </div>
+      <img
+        src="https://metroboulododo.fr/wp-content/uploads/2019/08/quotes.png"
+        alt='quotes'
+        className="quotes recomendation-quotes"
       />
-      <h4>{props.name}</h4>
-      <h5>{props.age}</h5>
       <p>{props.text1}</p>
       <p><strong>{props.text2}</strong></p>
       <p>{props.text3}</p>

@@ -1,6 +1,8 @@
 .recomendation-container {
+  margin: 15px 0;
   flex-grow: 1;
-  max-width: 30%;
+  max-width: 32%;
+  min-width: 300px;
   padding: 0 20px;
 
   h4 {
@@ -15,9 +17,26 @@
     color: #3eaaf4;
   }
 
-  img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  .recomendation-title {
+    display: flex;
+    // margin-bottom: 30px;
+
+    .recomendation-image {
+      width: 80px;
+      min-width: 80px;
+      height: 80px;
+      min-height: 80px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .recomendation-person {
+      margin: auto 0;
+    }
+  }
+
+  .recomendation-quotes {
+    position: relative;
+    left: 50%;
+    bottom: 20px;
   }
 }

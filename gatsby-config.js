@@ -49,27 +49,35 @@ module.exports = {
         name: 'allItemImages',
       },
     },
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: `@raae/gatsby-remark-oembed`,
-          options: {
-            // usePrefix defaults to false
-            // usePrefix: true is the same as ["oembed"]
-            usePrefix: ["oembed", "video"],
-            providers: {
-              // Important to exclude providers
-              // that adds js to the page.
-              // If you do not need them.
-              exclude: ["Reddit"]
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `@raae/gatsby-remark-oembed`,
+            options: {
+              // usePrefix defaults to false
+              // usePrefix: true is the same as ["oembed"]
+              usePrefix: ["oembed", "video"],
+              providers: {
+                // Important to exclude providers
+                // that adds js to the page.
+                // If you do not need them.
+                exclude: ["Reddit"]
+              }
             }
           }
-        }
-      ]
-    }
-  },
+        ]
+      }
+    },
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
   ],
