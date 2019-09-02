@@ -11,6 +11,13 @@ import Top from "../images/assets/top.svg"
 
 // import SEO from "../components/seo"
 export default class Jobs extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      testimonials: [],
+    };
+  }
 
   hooverEffect = (event) => {
     event.currentTarget.querySelector('path').style.fill = "#3eaaf4";
@@ -42,6 +49,7 @@ export default class Jobs extends React.Component {
 
   render() {
     const job = this.props.pageContext.job.page;
+    const testimonials = [job.testimonials.testimonial1, job.testimonials.testimonial2, job.testimonials.testimonial3]
 
     return (
       <Layout>
@@ -122,34 +130,22 @@ export default class Jobs extends React.Component {
           <div className="job-fourth-row job-row row">
             <h3>{job.testimonials.title}</h3>
             <div className="recomendation-list">
-
-              <Recomendation
-                image={this.getImage(job.testimonials.testimonial1.image)}
-                name={job.testimonials.testimonial1.name}
-                age={job.testimonials.testimonial1.age}
-                text1={job.testimonials.testimonial1.text1}
-                text2={job.testimonials.testimonial1.text2}
-                text3={job.testimonials.testimonial1.text3}
-              />
+              { testimonials.map(testimonial => {
+                if (testimonial.name) {
+                  return (
+                    <Recomendation
+                      image={this.getImage(testimonial.image)}
+                      name={testimonial.name}
+                      age={testimonial.age}
+                      text1={testimonial.text1}
+                      text2={testimonial.text2}
+                      text3={testimonial.text3}
+                      key={testimonial.text1}
+                    />
+                  )
+                }
+              })}
               <div className="yellow-bar"></div>
-              <Recomendation
-                image={this.getImage(job.testimonials.testimonial2.image)}
-                name={job.testimonials.testimonial2.name}
-                age={job.testimonials.testimonial2.age}
-                text1={job.testimonials.testimonial2.text1}
-                text2={job.testimonials.testimonial2.text2}
-                text3={job.testimonials.testimonial2.text3}
-              />
-              <div className="yellow-bar"></div>
-              <Recomendation
-                image={this.getImage(job.testimonials.testimonial3.image)}
-                name={job.testimonials.testimonial3.name}
-                age={job.testimonials.testimonial3.age}
-                text1={job.testimonials.testimonial3.text1}
-                text2={job.testimonials.testimonial3.text2}
-                text3={job.testimonials.testimonial3.text3}
-              />
-
             </div>
           </div>
 
