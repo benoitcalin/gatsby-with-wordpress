@@ -21,9 +21,9 @@ const Recomendation = (props) => {
           alt='quotes'
           className="quotes recomendation-quotes"
         />
-        <p>{props.text1}</p>
-        <p><strong>{props.text2}</strong></p>
-        <p>{props.text3}</p>
+        <p className='text-center'>{props.text1}</p>
+        <p className='text-center'><strong>{props.text2}</strong></p>
+        <p className='text-center'>{props.text3}</p>
       </div>
     </>
   )

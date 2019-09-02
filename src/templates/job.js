@@ -11,14 +11,6 @@ import Top from "../images/assets/top.svg"
 
 // import SEO from "../components/seo"
 export default class Jobs extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      testimonials: [],
-    };
-  }
-
   hooverEffect = (event) => {
     event.currentTarget.querySelector('path').style.fill = "#3eaaf4";
     event.currentTarget.querySelector('circle').style.stroke = "#3eaaf4";
@@ -67,6 +59,8 @@ export default class Jobs extends React.Component {
           <Video
             videoSrcURL={job.header.video.url}
             videoTitle={job.header.video.title}
+            frameborder="0"
+            allowfullscreen
           />
 
           <div className="job-first-row job-row row">
