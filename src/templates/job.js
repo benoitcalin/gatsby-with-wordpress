@@ -61,6 +61,8 @@ export default class Jobs extends React.Component {
             videoTitle={job.header.video.title}
             frameborder="0"
             allowfullscreen
+            width="560"
+            height="315"
           />
 
           <div className="job-first-row job-row row">
@@ -80,9 +82,13 @@ export default class Jobs extends React.Component {
                         <p key={formation}><strong>{formation}</strong></p>
                       )
                     } else {
-                      return (
-                        <p className="not-strong" key={formation}>{formation}</p>
-                      )
+                      if (formation.includes('&&')) {
+                        return formation.split(' && ').map(line => <p className="not-strong" key={line}>{line}</p>)
+                      } else {
+                        return (
+                          <p className="not-strong" key={formation}>{formation}</p>
+                        )
+                      }
                     }
                   })
                 }
