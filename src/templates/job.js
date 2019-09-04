@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Video from "../components/video"
 import Skill from "../components/skill"
 import Img from 'gatsby-image'
 import Recomendation from "../components/recomendation"
@@ -39,6 +38,32 @@ export default class Jobs extends React.Component {
     } else { return { src: "https://metroboulododo.fr/wp-content/uploads/2019/08/Ellipse.png"} }
   }
 
+  handleVideoPhoto = (video, image) => {
+    if (video) {
+      return (
+        <iframe
+          src={video.url}
+          title={video.title}
+          width="560"
+          height="315"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          frameBorder="0"
+          webkitallowfullscreen="true"
+          mozallowfullscreen="true"
+          allowFullScreen
+        />
+      )
+    } else {
+      return (
+        <Img
+          widht='710px'
+          height='400px'
+          fluid={image.imageFile.childImageSharp.fluid}
+        />
+      )
+    }
+  }
+
   render() {
     const job = this.props.pageContext.job.page;
     const testimonials = [job.testimonials.testimonial1, job.testimonials.testimonial2, job.testimonials.testimonial3]
@@ -56,47 +81,22 @@ export default class Jobs extends React.Component {
           <div className="job-title">
             <h2>{job.header.title}</h2>
           </div>
-          <Video
-            videoSrcURL={job.header.video.url}
-            videoTitle={job.header.video.title}
-            frameborder="0"
-            allowfullscreen
-            width="560"
-            height="315"
-          />
+
+          <div className="video">
+            {this.handleVideoPhoto(job.header.video, job.header.image)}
+          </div>
 
           <div className="job-first-row job-row row">
             <div className="job-description col-xs-12 col-md-6">
               <h5>{job.presentation.description.title}</h5>
-              {
-                this.splitText(job.presentation.description.text).map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-              }
+              <div dangerouslySetInnerHTML={{ __html: ['<p>', job.presentation.description.text, '</p>'].join('') }} />
             </div>
             <div className="job-access-and-skills col-xs-12 col-md-6">
               <h5>{job.presentation.skills.title}</h5>
-              <div className="access-list">
-                {
-                  this.splitText(job.presentation.skills.text).map((formation, index) => {
-                    if(index % 2 === 0) {
-                      return (
-                        <p key={formation}><strong>{formation}</strong></p>
-                      )
-                    } else {
-                      if (formation.includes('&&')) {
-                        return formation.split(' && ').map(line => <p className="not-strong" key={line}>{line}</p>)
-                      } else {
-                        return (
-                          <p className="not-strong" key={formation}>{formation}</p>
-                        )
-                      }
-                    }
-                  })
-                }
-              </div>
+              <div className="access-list" dangerouslySetInnerHTML={{ __html: ['<p>', job.presentation.skills.text, '</p>'].join('') }}/>
               <div className="skill-list">
                 {
-                  this.splitText(job.presentation.skills.list).map((skill) => <Skill title={skill} key={skill} />
-                  )
+                  this.splitText(job.presentation.skills.list).map((skill) => <Skill title={skill} key={skill} />)
                 }
               </div>
             </div>
@@ -116,14 +116,15 @@ export default class Jobs extends React.Component {
             <div className="job-market">
               <div className="job-market-content">
                 <Img className="job-image"
+                  height='250px'
+                  width='250px'
                   fluid={job.market.image.imageFile.childImageSharp.fluid}
                 />
               </div>
-              <div className="job-market-content">
-                {
-                  job.market.text.split(" // ").map((text) => <p key={text}>{text}</p>)
-                }
-              </div>
+              <div
+                className="job-market-content"
+                dangerouslySetInnerHTML={{ __html: ['<p>', job.market.text, '</p>'].join('') }}
+              />
             </div>
           </div>
 

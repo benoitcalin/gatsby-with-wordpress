@@ -13,7 +13,6 @@ const Recomendation = (props) => {
           />
           <div className="recomendation-person">
             <h5>{props.name}</h5>
-            {/* <h5>{props.age}</h5> */}
           </div>
         </div>
         <img

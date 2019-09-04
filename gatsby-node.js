@@ -177,6 +177,21 @@ const QUERY = `
                       title
                       url
                     }
+                    image {
+                      altText
+                      sourceUrl
+                      imageFile {
+                        childImageSharp {
+                          fluid(maxWidth: 1000) {
+                            src
+                            srcSet
+                            aspectRatio
+                            sizes
+                            base64
+                          }
+                        }
+                      }
+                    }
                   }
                   presentation {
                     description {
@@ -227,7 +242,6 @@ const QUERY = `
                         }
                       }
                       name
-                      age
                       text1
                       text2
                       text3
@@ -249,7 +263,6 @@ const QUERY = `
                         }
                       }
                       name
-                      age
                       text1
                       text2
                       text3
@@ -271,7 +284,6 @@ const QUERY = `
                         }
                       }
                       name
-                      age
                       text1
                       text2
                       text3
