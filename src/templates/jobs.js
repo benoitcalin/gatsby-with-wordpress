@@ -10,7 +10,7 @@ export default class Jobs extends React.Component {
 
     this.state = {
       query: '',
-      jobs: this.props.pageContext.jobs
+      jobs: this.props.pageContext.jobs.sort((a, b) => a.node.jobs.slug > b.node.jobs.slug ? 1 : -1)
     };
   }
 
@@ -31,6 +31,7 @@ export default class Jobs extends React.Component {
   }
 
   setContent = (jobs) => {
+    console.log(jobs)
     if (jobs.length > 0) {
       return this.state.jobs.map((job) => <Card job={job} key={job.node.jobs.slug} />)
     } else {

@@ -27,9 +27,13 @@ export default class Form extends React.Component {
     if (this.props.location.state) {
       if (this.props.location.state.prof) {
         return(
-          <h5>
-            VOUS SOUHAITEZ FAIRE DÉCOUVRIR VOTRE MÉTIER ET DONNER LA CHANCE AUX PERSONNES INTÉRESSÉES DE DÉCOUVRIR VOTRE SAVOIR-FAIRE, OU DE SE RECONVERTIR DANS VOTRE MÉTIER, ALORS C'EST ICI !
-          </h5>
+          <div>
+            <h5>
+              ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
+            </h5>
+            // Image
+            <p> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</p>
+          </div>
         )
       } else if (this.props.location.state.pack) {
         return (
