@@ -39,7 +39,7 @@ export default class Header extends React.Component {
                   /> */}
                     <img
                       src="https://metroboulododo.fr/wp-content/uploads/2019/09/Logo.png"
-                      alt='logo'
+                      alt='logo metro boulo dodo'
                     />
 
               </div>

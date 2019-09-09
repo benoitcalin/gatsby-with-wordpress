@@ -28,11 +28,16 @@ export default class Form extends React.Component {
       if (this.props.location.state.prof) {
         return(
           <div>
-            <h5>
+            <h3>
               ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
-            </h5>
-            // Image
-            <p> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</p>
+            </h3>
+            <div className="form-image">
+              <img
+                src="https://metroboulododo.fr/wp-content/uploads/2019/09/photo-gilles.jpg"
+                alt='portrait Gilles'
+              />
+            </div>
+            <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</h5>
           </div>
         )
       } else if (this.props.location.state.pack) {
