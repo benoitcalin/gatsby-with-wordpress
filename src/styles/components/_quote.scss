@@ -20,6 +20,16 @@
   }
 }
 
+.quote-background {
+  height: calc(100vh - 100px);
+  width: 100vw;
+  background: fit;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media(max-width: 991px) {
   .quote-container > h1 {
     font-size: 45px;
