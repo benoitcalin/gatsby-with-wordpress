@@ -35,7 +35,7 @@ export default class Jobs extends React.Component {
   getImage = (image) => {
     if (image) {
       return image.imageFile.childImageSharp.fluid
-    } else { return { src: "https://metroboulododo.fr/wp-content/uploads/2019/08/Ellipse.png"} }
+    } else { return { src: "https://metroboulododo.fr/wp-content/uploads/2019/09/ellipse-orange.png"} }
   }
 
   handleVideoPhoto = (video, image) => {

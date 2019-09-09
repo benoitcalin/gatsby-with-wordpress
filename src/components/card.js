@@ -6,7 +6,7 @@ class Card extends React.Component {
   handleImage(image) {
     if (image.imageFile) {
       return image.imageFile.childImageSharp.fluid
-    } else { return {src: 'https://metroboulododo.fr/wp-content/uploads/2019/08/man-linear.jpg' } }
+    } else { return { src: 'https://metroboulododo.fr/wp-content/uploads/2019/09/bored-man-linear.jpg' } }
   }
 
   render() {

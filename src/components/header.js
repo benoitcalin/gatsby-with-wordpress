@@ -38,7 +38,7 @@ export default class Header extends React.Component {
                     loading='auto'
                   /> */}
                     <img
-                      src="https://metroboulododo.fr/wp-content/uploads/2019/08/Logo.png"
+                      src="https://metroboulododo.fr/wp-content/uploads/2019/09/Logo.png"
                       alt='logo'
                     />
 

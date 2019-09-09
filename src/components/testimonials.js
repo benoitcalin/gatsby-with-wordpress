@@ -11,7 +11,7 @@ const Testimonials = (props) => (
             <div className="col-md-4 h-100 testimonial-col" key={testimonial.title}>
               <div className="testimonial-container">
                 <img
-                  src="https://metroboulododo.fr/wp-content/uploads/2019/08/quotes.png"
+                  src="https://metroboulododo.fr/wp-content/uploads/2019/09/quotes.png"
                   alt='quotes'
                   className="quotes"
                 />
