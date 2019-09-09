@@ -11,7 +11,6 @@ export default class Form extends React.Component {
     lastName: "",
     email: "",
     phone: "",
-    date: "",
     content: "",
     job: "",
     information: "",
@@ -89,6 +88,9 @@ export default class Form extends React.Component {
     this.setState({
       [name]: value,
     })
+  }
+
+  componentDidMount() {
     flatpickr("#myID", {
       mode: "range",
       minDate: "today"
@@ -198,10 +200,8 @@ export default class Form extends React.Component {
                 className="form-control"
                 type="text"
                 id='myID'
-                name="disponibility"
+                name="date"
                 placeholder='Choisissez la période de votre choix'
-                value={this.state.date}
-                onChange={this.handleInputChange}
               />
             </div>
             <div className="col-12 form-group">
