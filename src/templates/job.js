@@ -56,12 +56,23 @@ export default class Jobs extends React.Component {
     } else {
       return (
         <Img
-          widht='710px'
-          height='400px'
+          widht='560px'
+          height='315px'
           fluid={image.imageFile.childImageSharp.fluid}
         />
       )
     }
+  }
+  setHtmlInMail = () => {
+    const first = "mailto:mon.ami@gmail.com?subject=Check%20cette%20id%C3%A9e%20de%20reconversion%20!&body=Je%20suis%20tomb%C3%A9%20sur%20cette%20fiche%20m%C3%A9tier%20en%20cherchant%20une%20id%C3%A9e%20de%20reconversion%20sur%20metroboulododo.com%2C%20%C3%A7a%20pourrait%20t'int%C3%A9resser%20%3A%0A"
+    const last = window.location.href
+    return [first, last].join('')
+  }
+  openFB = () => {
+    const base = 'https://www.facebook.com/sharer/sharer.php?u='
+    const url = window.location.href
+    const conc = [base, url].join('')
+    window.open(conc, 'sharer', 'toolbar=0,status=0,width=580,height=325')
   }
 
   render() {
@@ -74,7 +85,7 @@ export default class Jobs extends React.Component {
           <div>
             <Link to='/'>Accueil</Link> >
             <Link to='/jobs'> Nos Métiers</Link> >
-            <span> {this.props.pageContext.title}</span>
+            <span>{this.props.pageContext.title}</span>
           </div>
         </div>
         <div id="job-container">
@@ -107,8 +118,13 @@ export default class Jobs extends React.Component {
               <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
             </div>
             <h3>Partagez à vos contacts</h3>
-            <Facebook id="facebook-icon" onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} />
-            <Mail id="mail-icon" onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} />
+            <a className="fb-share" onClick={this.openFB}>
+              <Facebook id="facebook-icon" onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} />
+            </a>
+
+            <a href={this.setHtmlInMail()}>
+              <Mail id="mail-icon" onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} />
+            </a>
           </div>
 
           <div className="job-third-row job-row row">
