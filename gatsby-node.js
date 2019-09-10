@@ -10,6 +10,11 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
     component: require.resolve("./src/templates/cgu.js"),
   })
 
+  createPage({
+    path: `/faq`,
+    component: require.resolve("./src/templates/faq.js"),
+  })
+
   // GET JOBS INFOS
   const results = await graphql(QUERY)
 
