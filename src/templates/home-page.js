@@ -8,33 +8,37 @@ import Quote from '../components/quote'
 import Testimonials from '../components/testimonials'
 import Features from '../components/features'
 
-const HomePage = () => (
-  <Layout>
-    <StaticQuery
-      query={QUERY}
-      render={data => {
-        const banner = data.wpgraphql.page.page_home.banner
-        const about = data.wpgraphql.page.page_home.about
-        const quote = data.wpgraphql.page.page_home.quote
-        const testimonials_title = data.wpgraphql.page.page_home.testimonials.title
-        const testimonials = [data.wpgraphql.page.page_home.testimonials.testimonial1, data.wpgraphql.page.page_home.testimonials.testimonial2, data.wpgraphql.page.page_home.testimonials.testimonial3]
-        const features_title = data.wpgraphql.page.page_home.features.title
-        const features = [data.wpgraphql.page.page_home.features.feature1, data.wpgraphql.page.page_home.features.feature2, data.wpgraphql.page.page_home.features.feature3]
-        const button = data.wpgraphql.page.page_home.buttonText
+class HomePage extends React.Component {
+  render() {
+    return (
+      <Layout>
+        <StaticQuery
+          query={QUERY}
+          render={data => {
+            const banner = data.wpgraphql.page.page_home.banner
+            const about = data.wpgraphql.page.page_home.about
+            const quote = data.wpgraphql.page.page_home.quote
+            const testimonials_title = data.wpgraphql.page.page_home.testimonials.title
+            const testimonials = [data.wpgraphql.page.page_home.testimonials.testimonial1, data.wpgraphql.page.page_home.testimonials.testimonial2, data.wpgraphql.page.page_home.testimonials.testimonial3]
+            const features_title = data.wpgraphql.page.page_home.features.title
+            const features = [data.wpgraphql.page.page_home.features.feature1, data.wpgraphql.page.page_home.features.feature2, data.wpgraphql.page.page_home.features.feature3]
+            const button = data.wpgraphql.page.page_home.buttonText
 
-        return (
-          <div>
-            <Banner data={banner} button={button} />
-            <About data={about} />
-            <Quote data={quote} button={button} />
-            <Features title={features_title} data={features} />
-            <Testimonials title={testimonials_title} testimonials={testimonials} button={button} />
-          </div>
-        )
-      }}
-    />
-  </Layout>
-)
+            return (
+              <div>
+                <Banner data={banner} button={button} />
+                <About data={about} />
+                <Quote data={quote} button={button} />
+                <Features title={features_title} data={features} />
+                <Testimonials title={testimonials_title} testimonials={testimonials} button={button} />
+              </div>
+            )
+          }}
+        />
+      </Layout>
+    )
+  }
+}
 
 export default HomePage;
 
