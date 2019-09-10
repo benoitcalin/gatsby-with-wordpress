@@ -1,10 +1,26 @@
 .footer {
-  height: 70px;
+  margin-top: 15px;
+  border-top: 1px solid #ccc;
+  height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   p {
     margin: 0;
     font-size: 12px;
+  }
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  a {
+    width: 100%;
+    margin: 3px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #4D525E;;
   }
 }

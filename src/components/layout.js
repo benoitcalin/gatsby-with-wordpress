@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import '../styles/styles.scss'
@@ -28,8 +28,10 @@ const Layout = ({ children }) => {
           <div className='d-flex align-items-center' style={{marginLeft: '20px'}}>
             <p>© {new Date().getFullYear()}, Metroboulododo</p>
           </div>
-          <div className='d-flex align-items-center' style={{ marginRight: '20px' }}>
-            <p>Mentions Légales</p>
+          <div className='d-flex align-items-center footer-right' style={{ marginRight: '20px' }}>
+            <Link to='/'>Mentions Légales</Link>
+            <Link to='/faq'>FAQ</Link>
+            <Link to='/cgu'>CGU</Link>
           </div>
         </footer>
       </div>

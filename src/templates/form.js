@@ -219,7 +219,7 @@ export default class Form extends React.Component {
             <div className="submit-zone">
               <div className='d-flex align-items-center' style={{marginBottom: '16px'}}>
                 <input type="checkbox" name="CGU" required/>
-                <p style={{ margin: '0 0 0 15px' }}>J'ai pris connaissance et accepte les CGU <span style={{ color: 'red' }}>*</span></p>
+                <p style={{ margin: '0 0 0 15px' }}>J'ai pris connaissance et accepte les <Link to='/cgu'>CGU</Link> <span style={{ color: 'red' }}>*</span></p>
               </div>
               <p><span style={{ color: 'red' }}>*</span> Ces champs sont obligatoires</p>
               <button type="submit" className='btn button-primary'>ENVOYER</button>
