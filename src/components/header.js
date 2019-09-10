@@ -5,7 +5,8 @@ import React from "react"
 export default class Header extends React.Component {
   handleClick = () => (event) => {
     event.currentTarget.classList.toggle('open')
-    document.getElementById('navbar-main-collapse').classList.toggle('active')
+    console.log(document.querySelector('.navbar-collapse'))
+    document.querySelector('.navbar-collapse').classList.toggle('active')
   }
 
   componentDidMount() {
@@ -23,93 +24,48 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <StaticQuery
-        query={QUERY}
-        render={data => {
-          // const logo = data.wpgraphql.page.page_home.logo
-
-          return (
-            <div className='header'>
-                <Link to='/'>
-              <div className="header-logo">
-                  {/* <Img
-                    fluid={logo.imageFile.childImageSharp.fluid}
-                    alt={logo.alt}
-                    loading='auto'
-                  /> */}
-                    <img
-                      src="https://metroboulododo.fr/wp-content/uploads/2019/09/Logo.png"
-                      alt='logo metro boulo dodo'
-                    />
-
-              </div>
-                </Link>
-              <div className='header-links'>
-                <Link className='linky' to='/'>CONCEPT</Link>
-                <Link className='linky' to='/jobs'>METIERS</Link>
-                <Link className='linky' to='/contact'>CONTACT</Link>
-                <Link
-                  className='linky'
-                  to='/pro/contact'
-                  state={{ prof: true }}
-                >
-                  DEVENIR PARTENAIRE
-                </Link>
-              </div>
-              <div
-                id="nav-icon1"
-                onClick={this.handleClick()}
-                // type="button"
-                className="navbar-toggle collapsed"
-                data-toggle="collapse"
-                data-target="#navbar-main-collapse"
-                aria-expanded="false"
-              >
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <div
-                className="collapse navbar-collapse"
-                id="navbar-main-collapse"
-              >
-                <Link className='linky' to='/'>CONCEPT</Link>
-                <Link className='linky' to='/jobs'>METIERS</Link>
-                <Link className='linky' to='/contact'>CONTACT</Link>
-                <Link
-                  className='linky'
-                  to='/pro/contact'
-                  state={{ prof: true }}
-                >
-                  DEVENIR PARTENAIRE
-                </Link>
-              </div>
-            </div>
-          )
-        }}
-      />
+      <div className='header'>
+          <Link to='/'>
+        <div className="header-logo">
+            <img
+              src="https://metroboulododo.fr/wp-content/uploads/2019/09/Logo.png"
+              alt='logo metro boulo dodo'
+            />
+        </div>
+          </Link>
+        <div className='header-links'>
+          <Link className='linky' to='/'>CONCEPT</Link>
+          <Link className='linky' to='/jobs'>METIERS</Link>
+          <Link className='linky' to='/contact'>CONTACT</Link>
+          <Link
+            className='linky'
+            to='/pro/contact'
+            state={{ prof: true }}
+          >
+            DEVENIR PARTENAIRE
+          </Link>
+        </div>
+        <div
+          id="nav-icon1"
+          onClick={this.handleClick()}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="navbar-collapse">
+          <Link className='linky' to='/'>CONCEPT</Link>
+          <Link className='linky' to='/jobs'>METIERS</Link>
+          <Link className='linky' to='/contact'>CONTACT</Link>
+          <Link
+            className='linky'
+            to='/pro/contact'
+            state={{ prof: true }}
+          >
+            DEVENIR PARTENAIRE
+          </Link>
+        </div>
+      </div>
     )
   }
 }
-
-const QUERY = graphql`
-  query GET_LOGO {
-    wpgraphql {
-      page(id: "cGFnZToxNjc=") {
-        page_home {
-          logo {
-            altText
-            sourceUrl
-            imageFile {
-              childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`

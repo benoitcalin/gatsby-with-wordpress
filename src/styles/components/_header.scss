@@ -10,8 +10,26 @@
   font-weight: 600;
 }
 
+.navbar-collapse {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 70vw;
+  position: absolute;
+  background-color: $brand-color;
+  top: 100px;
+  right: 0;
+  display:none;
+  a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    height: 35px;
+  }
+}
+
 .active {
-  display: block;
+  display: flex;
 }
 
 a {
