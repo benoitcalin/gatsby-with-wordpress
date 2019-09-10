@@ -7,6 +7,7 @@ import Recomendation from "../components/recomendation"
 import Facebook from "../images/assets/facebook.svg"
 import Mail from "../images/assets/mail.svg"
 import Top from "../images/assets/top.svg"
+import BackgroundImage from 'gatsby-background-image';
 
 // import SEO from "../components/seo"
 export default class Jobs extends React.Component {
@@ -41,23 +42,24 @@ export default class Jobs extends React.Component {
   handleVideoPhoto = (video, image) => {
     if (video) {
       return (
-        <iframe
-          src={video.url}
-          title={video.title}
-          width="560"
-          height="315"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-        />
+        <div className="job-head-video">
+          <iframe
+            src={video.url}
+            title={video.title}
+            width="560"
+            height="315"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+          />
+        </div>
       )
     } else {
       return (
-        <Img
-          widht='560px'
-          height='315px'
+        <BackgroundImage
+          className='job-head-image'
           fluid={image.imageFile.childImageSharp.fluid}
         />
       )
@@ -85,7 +87,7 @@ export default class Jobs extends React.Component {
           <div>
             <Link to='/'>Accueil</Link> >
             <Link to='/jobs'> Nos Métiers</Link> >
-            <span>{this.props.pageContext.title}</span>
+            <span> {this.props.pageContext.title}</span>
           </div>
         </div>
         <div id="job-container">
@@ -93,9 +95,7 @@ export default class Jobs extends React.Component {
             <h2>{job.header.title}</h2>
           </div>
 
-          <div className="video">
-            {this.handleVideoPhoto(job.header.video, job.header.image)}
-          </div>
+          {this.handleVideoPhoto(job.header.video, job.header.image)}
 
           <div className="job-first-row job-row row">
             <div className="job-description col-xs-12 col-md-6">
@@ -162,7 +162,6 @@ export default class Jobs extends React.Component {
                   )
                 }
               })}
-              <div className="yellow-bar"></div>
             </div>
           </div>
 

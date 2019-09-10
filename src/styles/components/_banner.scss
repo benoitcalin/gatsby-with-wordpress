@@ -22,10 +22,14 @@
   height: calc(100vh - 100px);
   width: 100vw;
   background: fit;
-  background-position: center;
+  background-position: top;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.banner-background:after {
+  background-position: top;
 }
 
 @media(max-width: 991px) {
