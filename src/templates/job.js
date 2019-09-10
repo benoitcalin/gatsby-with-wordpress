@@ -66,15 +66,19 @@ export default class Jobs extends React.Component {
     }
   }
   setHtmlInMail = () => {
-    const first = "mailto:mon.ami@gmail.com?subject=Check%20cette%20id%C3%A9e%20de%20reconversion%20!&body=Je%20suis%20tomb%C3%A9%20sur%20cette%20fiche%20m%C3%A9tier%20en%20cherchant%20une%20id%C3%A9e%20de%20reconversion%20sur%20metroboulododo.com%2C%20%C3%A7a%20pourrait%20t'int%C3%A9resser%20%3A%0A"
-    const last = window.location.href
-    return [first, last].join('')
+    if (window) {
+      const first = "mailto:mon.ami@gmail.com?subject=Check%20cette%20id%C3%A9e%20de%20reconversion%20!&body=Je%20suis%20tomb%C3%A9%20sur%20cette%20fiche%20m%C3%A9tier%20en%20cherchant%20une%20id%C3%A9e%20de%20reconversion%20sur%20metroboulododo.com%2C%20%C3%A7a%20pourrait%20t'int%C3%A9resser%20%3A%0A"
+      const last = window.location.href
+      return [first, last].join('')
+    }
   }
   openFB = () => {
-    const base = 'https://www.facebook.com/sharer/sharer.php?u='
-    const url = window.location.href
-    const conc = [base, url].join('')
-    window.open(conc, 'sharer', 'toolbar=0,status=0,width=580,height=325')
+    if (window) {
+      const base = 'https://www.facebook.com/sharer/sharer.php?u='
+      const url = window.location.href
+      const conc = [base, url].join('')
+      window.open(conc, 'sharer', 'toolbar=0,status=0,width=580,height=325')
+    }
   }
 
   render() {
