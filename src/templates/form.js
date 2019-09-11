@@ -26,17 +26,19 @@ export default class Form extends React.Component {
     if (this.props.location.state) {
       if (this.props.location.state.prof) {
         return(
-          <div>
-            <h3>
-              ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
-            </h3>
-            <div className="form-image">
+          <div className='form-pro-subtitle'>
+            <div className='form-pro-titles'>
+              <h3>
+                ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
+              </h3>
+              <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</h5>
+            </div>
+            <div className="form-pro-image">
               <img
                 src="https://metroboulododo.fr/wp-content/uploads/2019/09/photo-gilles.jpg"
                 alt='portrait Gilles'
               />
             </div>
-            <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</h5>
           </div>
         )
       } else if (this.props.location.state.pack) {
@@ -222,7 +224,7 @@ export default class Form extends React.Component {
                 <p style={{ margin: '0 0 0 15px' }}>J'ai pris connaissance et accepte les <Link to='/cgu'>CGU</Link> <span style={{ color: 'red' }}>*</span></p>
               </div>
               <p><span style={{ color: 'red' }}>*</span> Ces champs sont obligatoires</p>
-              <button type="submit" className='btn button-primary'>ENVOYER</button>
+              <button style={{marginBottom: '30px'}} type="submit" className='btn button-primary'>ENVOYER</button>
             </div>
           </form>
         </div>

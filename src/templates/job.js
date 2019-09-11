@@ -176,7 +176,7 @@ export default class Jobs extends React.Component {
             <div id="scroll-to-top">
               <Top onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} onClick={this.scrollTop} />
             </div>
-            <div className="col-sm">
+            <div className="col-sm" style={{marginBottom: '30px'}}>
               <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
             </div>
           </div>
