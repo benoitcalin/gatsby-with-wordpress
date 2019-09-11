@@ -1,11 +1,9 @@
-import { Link, StaticQuery, graphql } from "gatsby"
-// import Img from 'gatsby-image'
+import { Link } from "gatsby"
 import React from "react"
 
 export default class Header extends React.Component {
   handleClick = () => (event) => {
     event.currentTarget.classList.toggle('open')
-    console.log(document.querySelector('.navbar-collapse'))
     document.querySelector('.navbar-collapse').classList.toggle('active')
   }
 

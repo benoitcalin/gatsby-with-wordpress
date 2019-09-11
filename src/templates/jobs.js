@@ -31,7 +31,6 @@ export default class Jobs extends React.Component {
   }
 
   setContent = (jobs) => {
-    console.log(jobs)
     if (jobs.length > 0) {
       return this.state.jobs.map((job) => <Card job={job} key={job.node.jobs.slug} />)
     } else {

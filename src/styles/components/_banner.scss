@@ -27,14 +27,18 @@
   height: calc(100vh - 100px);
   width: 100vw;
   background: fit;
-  background-position: top;
+  background-position: top !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.banner-background:before {
+  background-position: top !important;
+}
+
 .banner-background:after {
-  background-position: top;
+  background-position: top !important;
 }
 
 @media(max-width: 991px) {
