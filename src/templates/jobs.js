@@ -60,6 +60,20 @@ export default class Jobs extends React.Component {
             />
             <div className="flex-container">
               {this.setContent(this.state.jobs)}
+              <div className="col-xl-3 col-lg-4 col-sm-6 col-xs-12 card-col">
+                <Link to='/form'>
+                  <div className="additionnal-card">
+                    <h6>Le métier de vos rêves ne figure pas dans la liste ? Cliquez ici !</h6>
+                  </div>
+                </Link>
+              </div>
+              <div className="col-xl-3 col-lg-4 col-sm-6 col-xs-12 card-col">
+                <Link to='/form'>
+                  <div className="additionnal-card">
+                    <h6>Vous souhaitez changer de métier mais vous ne savez pas vers quoi ? Cliquez ici et discutons-en !</h6>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

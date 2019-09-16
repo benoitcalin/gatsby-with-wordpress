@@ -10,9 +10,10 @@ const Quote = (props) => (
   >
     <div className="quote-container">
       <h1>{props.data.title}</h1>
-      {/* <h3>{props.data.text}</h3> */}
+
       <Link className="btn button-primary" to="/jobs/">{props.button}</Link>
     </div>
+    <p>{props.data.text}</p>
   </BackgroundImage>
 )
 

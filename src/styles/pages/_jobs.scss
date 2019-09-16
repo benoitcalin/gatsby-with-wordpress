@@ -27,6 +27,9 @@
   h2 {
     margin: 50px;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .card-col {
@@ -36,11 +39,31 @@
   align-items: center;
 }
 
-.job-card {
+.additionnal-card {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  h6 {
+    color: #4D525E;
+    text-align: center;
+  }
+  &:hover {
+    h6 {
+      color: #F7BA45;
+      font-weight: 600;
+    }
+  }
+}
+
+.job-card, .additionnal-card {
   position: relative;
   border-radius: 5px;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
   transition: all .2s ease-in-out;
+  text-decoration: none;
   a {
     text-decoration: none;
     color: #4D525E;
