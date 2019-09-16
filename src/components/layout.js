@@ -33,12 +33,12 @@ const Layout = ({ children }) => {
           </div>
 
           <div className="logos-links">
-            <Link to='https://www.facebook.com/Metroboulododo-2182079021879622/'>
+            <a href='https://www.facebook.com/Metroboulododo-2182079021879622/'>
               <Facebook/>
-            </Link>
-            <Link to='https://www.linkedin.com/company/20288997'>
+            </a>
+            <a href='https://www.linkedin.com/company/20288997'>
               <Linkedin/>
-            </Link>
+            </a>
           </div>
 
           <div className='d-flex align-items-center footer-right' style={{ marginRight: '20px' }}>
