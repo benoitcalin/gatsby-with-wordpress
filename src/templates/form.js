@@ -53,7 +53,7 @@ export default class Form extends React.Component {
     }
   }
   displayLabel = () => {
-    if (this.props.location.state.prof) {
+    if (this.props.location.state && this.props.location.state.prof) {
       return "métier"
     }
     else {
