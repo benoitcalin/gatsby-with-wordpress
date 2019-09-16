@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
           </div>
 
           <div className='d-flex align-items-center footer-right' style={{ marginRight: '20px' }}>
-            <Link to='/'>Mentions Légales</Link>
+            <Link to='/legals'>Mentions Légales</Link>
             <Link to='/faq'>FAQ</Link>
             <Link to='/cgu'>CGU</Link>
           </div>
