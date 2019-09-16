@@ -31,7 +31,7 @@ export default class Form extends React.Component {
               <h3>
                 ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
               </h3>
-              <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est içi.</h5>
+              <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est ici.</h5>
             </div>
             <div className="form-pro-image">
               <img
@@ -50,6 +50,15 @@ export default class Form extends React.Component {
           </h5>
         )
       }
+    }
+  }
+  displayLabel = () => {
+    if (this.props.location.state) {
+      if (this.props.location.state.prof) {
+        return "métier"
+      }
+    } else {
+      return "projet"
     }
   }
   displayLinks = () => {
@@ -208,7 +217,7 @@ export default class Form extends React.Component {
             </div>
             <div className="col-12 form-group">
               <label>
-                Parlez-nous de votre projet
+                Parlez-nous de votre {this.displayLabel()}
               </label>
               <textarea
                 className="textarea"

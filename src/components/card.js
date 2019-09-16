@@ -4,7 +4,6 @@ import Img from 'gatsby-image'
 
 class Card extends React.Component {
   handleImage(image) {
-    console.log(image)
     if (image && image.imageFile) {
       return image.imageFile.childImageSharp.fluid
     } else { return { src: 'https://metroboulododo.fr/wp-content/uploads/2019/09/bored-man-linear.jpg' } }
