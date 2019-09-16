@@ -40,7 +40,7 @@ export default class Header extends React.Component {
             to='/pro/contact'
             state={{ prof: true }}
           >
-            DEVENIR PARTENAIRE
+            PARTAGER VOTRE MÉTIER
           </Link>
         </div>
         <div
@@ -60,7 +60,7 @@ export default class Header extends React.Component {
             to='/pro/contact'
             state={{ prof: true }}
           >
-            DEVENIR PARTENAIRE
+            PARTAGER VOTRE MÉTIER
           </Link>
         </div>
       </div>
