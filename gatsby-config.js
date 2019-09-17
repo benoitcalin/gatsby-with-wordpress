@@ -39,7 +39,7 @@ module.exports = {
         // This is field under which it's accessible
         fieldName: `wpgraphql`,
         // Url to query from
-        url: `https://metroboulododo.fr/graphql`,
+        url: `https://admin.metroboulododo.fr/graphql`,
       },
     },
     `gatsby-image`,

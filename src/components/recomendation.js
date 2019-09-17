@@ -15,7 +15,7 @@ const Recomendation = (props) => {
       </div>
       <div className='recomendation-quote-cont'>
         <img
-          src="https://metroboulododo.fr/wp-content/uploads/2019/09/quotes.png"
+          src="https://admin.metroboulododo.fr/wp-content/uploads/2019/09/quotes.png"
           alt='quotes'
           className="quotes recomendation-quotes"
         />
