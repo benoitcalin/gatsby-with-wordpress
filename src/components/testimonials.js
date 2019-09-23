@@ -37,6 +37,8 @@ class Testimonials extends React.Component {
                     </p>
                     <Img
                       fluid={testimonial.image.imageFile.childImageSharp.fluid}
+                      width='100px'
+                      height='100px'
                       className='testimonial-image'
                     />
                     <h5 className="text-center" style={{ width: '95%' }}>{testimonial.title}</h5>
