@@ -22,7 +22,7 @@ const Duration = (props) => {
       <div className="duration-container">
         <h2>{duration.title}</h2>
         <h5 className="duration-subtitle">{duration.subtitle}</h5>
-        <div className="row">
+        <div className="row duration-row">
           <div className="col"></div>
           <div className="col-md-4 col-sm-5 col-xs-12 duration-col">
             <div className="duration-card-container" style={{ border: '1px solid #3EAAF4'}}>
