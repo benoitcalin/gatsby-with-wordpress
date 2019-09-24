@@ -1,10 +1,11 @@
 import React from "react"
-
+import Helmet from "react-helmet"
 import Layout from "../components/layout";
 
 const FAQ = () => {
   return (
     <Layout>
+      <Helmet title="MetroBouloDodo - Foire Aux Questions" />
       <div className='cgu-container'>
         <h1>Aide aux particuliers</h1>
 

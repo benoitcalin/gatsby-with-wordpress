@@ -1,10 +1,12 @@
 import React from "react"
+import Helmet from "react-helmet"
 
 import Layout from "../components/layout";
 
 const Legals = () => {
   return (
     <Layout>
+      <Helmet title="MetroBouloDodo - Mentions Légales" />
       <div className='cgu-container'>
         <h1>Mentions Légales</h1>
 

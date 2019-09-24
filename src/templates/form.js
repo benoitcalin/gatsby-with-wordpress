@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from 'gatsby'
-import Layout from "../components/layout";
+import Helmet from "react-helmet"
 
+import Layout from "../components/layout";
 import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from "flatpickr";
 
@@ -110,6 +111,7 @@ export default class Form extends React.Component {
   render() {
     return (
       <Layout>
+        <Helmet title="MetroBouloDodo - Nous contacter"  />
         <div className="follow-up-links">
           {this.displayLinks()}
         </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Helmet from "react-helmet"
 // import Img from 'gatsby-image'
 
 import Layout from "../components/layout";
@@ -9,6 +10,7 @@ const Duration = (props) => {
   const duration = props.pageContext.job.duration
   return (
     <Layout>
+      <Helmet title="MetroBouloDodo - Choix durée" />
       <div className="follow-up-links">
         <div>
           <Link to='/'>Accueil</Link> >

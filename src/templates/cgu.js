@@ -1,10 +1,12 @@
 import React from "react"
+import Helmet from "react-helmet"
 
 import Layout from "../components/layout";
 
 const CGU = () => {
   return (
     <Layout>
+      <Helmet title="MetroBouloDodo - Conditions Générales d'Utilisation" />
       <div className='cgu-container'>
         <h1>Conditions générales d'utilisation de MetroBouloDodo</h1>
 

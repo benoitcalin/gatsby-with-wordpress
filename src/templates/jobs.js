@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from 'gatsby';
+import { Link } from 'gatsby'
+import Helmet from "react-helmet"
 
 import Layout from "../components/layout"
 import Card from "../components/card"
@@ -45,6 +46,7 @@ export default class Jobs extends React.Component {
   render() {
     return (
       <Layout>
+        <Helmet title="MetroBouloDodo - Nos Métiers" />
         <div>
           <div className="follow-up-links">
             <div>

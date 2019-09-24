@@ -4,9 +4,11 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby With Wordpress`,
-    description: `A nice try.`,
-    author: `bencal`,
+    title: `MetroBouloDodo`,
+    siteUrl: `https://metroboulododo.fr/`,
+    description: `Tester un métier porteur de sens pendant quelques jours avec un professionnel passionné en s’immergeant dans son quotidien et en découvrant un savoir-faire.`,
+    author: `Benoit CALIN and Nicolas BEAUDOUIN`,
+    fb_image: `https://admin.metroboulododo.fr/wp-content/uploads/2019/09/og-image.png`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -84,5 +86,23 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        // exclude: [`/admin`, `/tags/links`]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-148507429-1`,
+      },
+    },
   ],
 }

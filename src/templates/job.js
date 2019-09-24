@@ -1,5 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import Helmet from "react-helmet"
+import BackgroundImage from 'gatsby-background-image';
+
 import Layout from "../components/layout"
 import Skill from "../components/skill"
 import Img from 'gatsby-image'
@@ -7,7 +10,6 @@ import Recomendation from "../components/recomendation"
 import Facebook from "../images/assets/facebook.svg"
 import Mail from "../images/assets/mail.svg"
 import Top from "../images/assets/top.svg"
-import BackgroundImage from 'gatsby-background-image';
 
 // import SEO from "../components/seo"
 export default class Jobs extends React.Component {
@@ -87,6 +89,7 @@ export default class Jobs extends React.Component {
 
     return (
       <Layout>
+        <Helmet title={`MetroBouloDodo - ${this.props.pageContext.title}`}  />
         <div className="follow-up-links">
           <div>
             <Link to='/'>Accueil</Link> >

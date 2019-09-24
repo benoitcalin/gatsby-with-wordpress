@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
+import SEO from "./seo"
 import Facebook from "../images/assets/facebook-2.svg"
 import Linkedin from "../images/assets/linkedin.svg"
 import '../styles/styles.scss'
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <SEO />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className='site-container'>
         <main>
