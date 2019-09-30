@@ -4,7 +4,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `MetroBouloDodo`,
+    title: `MetroBouloDodo - Tester un métier avec un passionné`,
     siteUrl: `https://metroboulododo.fr/`,
     description: `Tester un métier porteur de sens pendant quelques jours avec un professionnel passionné en s’immergeant dans son quotidien et en découvrant un savoir-faire.`,
     author: `Benoit CALIN and Nicolas BEAUDOUIN`,
