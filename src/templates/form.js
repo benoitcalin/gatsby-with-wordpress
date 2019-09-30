@@ -126,7 +126,7 @@ export default class Form extends React.Component {
         <div className='form-container'>
           <form
             className='row form-row'
-            action="https://formspree.io/benoit.calin@gmail.com"
+            action="https://formspree.io/hugo@metroboulododo.fr"
             method="POST"
           >
             <div className="col-12 col-md-6 form-group">
