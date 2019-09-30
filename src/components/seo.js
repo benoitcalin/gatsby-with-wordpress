@@ -47,7 +47,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image:secure_url`,
-          content: site.siteMetadata.fb_image,
+          content: "https://admin.metroboulododo.fr/wp-content/uploads/2019/09/og-image.png",
+        },
+        {
+          property: `og:image`,
+          content: "https://admin.metroboulododo.fr/wp-content/uploads/2019/09/og-image.png",
         },
         {
           name: `twitter:card`,
