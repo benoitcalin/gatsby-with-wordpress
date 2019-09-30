@@ -122,7 +122,7 @@ export default class Jobs extends React.Component {
 
           <div className="job-second-row job-row row">
             <div className="col-sm">
-              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
+              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE MÉTIER</Link>
             </div>
             <h3>Partagez à vos contacts</h3>
             <a className="fb-share" onClick={this.openFB}>
@@ -177,7 +177,7 @@ export default class Jobs extends React.Component {
               <Top onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} onClick={this.scrollTop} />
             </div>
             <div className="col-sm" style={{marginBottom: '30px'}}>
-              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE METIER</Link>
+              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE MÉTIER</Link>
             </div>
           </div>
 

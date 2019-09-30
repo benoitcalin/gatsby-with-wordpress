@@ -33,7 +33,7 @@ export default class Header extends React.Component {
           </Link>
         <div className='header-links'>
           <Link className='linky' to='/'>CONCEPT</Link>
-          <Link className='linky' to='/jobs'>METIERS</Link>
+          <Link className='linky' to='/jobs'>MÉTIERS</Link>
           <Link className='linky' to='/contact'>CONTACT</Link>
           <Link
             className='linky'
@@ -53,7 +53,7 @@ export default class Header extends React.Component {
         </div>
         <div className="navbar-collapse">
           <Link className='linky' to='/'>CONCEPT</Link>
-          <Link className='linky' to='/jobs'>METIERS</Link>
+          <Link className='linky' to='/jobs'>MÉTIERS</Link>
           <Link className='linky' to='/contact'>CONTACT</Link>
           <Link
             className='linky'
