@@ -46,7 +46,7 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          property: `og:image`,
+          property: `og:image:secure_url`,
           content: site.siteMetadata.fb_image,
         },
         {
