@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 // import SEO from "../components/seo"
 
 const Duration = (props) => {
-  const duration = props.pageContext.job.duration
+  const duration = props.pageContext.duration
   return (
     <Layout>
       <Helmet title="MetroBouloDodo - Choix durée" />
@@ -36,6 +36,7 @@ const Duration = (props) => {
                   height: '110px',
                 }}
                   fluid={duration.card1.image.imageFile.childImageSharp.fluid}
+                  alt={duration.card1.image.altText}
               /> */}
               <p>{duration.card1.text}</p>
               <Link
@@ -90,34 +91,3 @@ const Duration = (props) => {
 }
 
 export default Duration
-
-/// SCHEMA
-// duration {
-//   title
-//   subtitle
-//   card1 {
-//     title
-//     subtitle
-//     text
-//     image {
-//       altText
-//       sourceUrl
-//       imageFile {
-//       }
-//     }
-//     button
-//   }
-//   card2 {
-//     title
-//     subtitle
-//     text
-//     image {
-//       altText
-//       sourceUrl
-//       imageFile {
-//         }
-//       }
-//     }
-//     button
-//   }
-// }

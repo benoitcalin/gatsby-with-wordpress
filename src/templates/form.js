@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from 'gatsby'
 import Helmet from "react-helmet"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout";
 import 'flatpickr/dist/flatpickr.min.css';
@@ -30,14 +31,18 @@ export default class Form extends React.Component {
           <div className='form-pro-subtitle'>
             <div className='form-pro-titles'>
               <h3>
-                ENVIE DE FAIRE TESTER VOTRE MÉTIER ? 
+                {this.props.pageContext.contact.pro.title}
               </h3>
-              <h5> Si vous aussi comme Gilles vous voulez faire découvrir votre métier et donner la chance aux personnes intéressées de découvrir votre savoir-faire ou de se reconvertir dans votre métier, alors c’est ici.</h5>
+              <h5>
+                {this.props.pageContext.contact.pro.text}
+              </h5>
             </div>
             <div className="form-pro-image">
-              <img
-                src="https://admin.metroboulododo.fr/wp-content/uploads/2019/09/photo-gilles.jpg"
-                alt='portrait Gilles'
+              <Img
+                height='285px'
+                width='350px'
+                fluid={this.props.pageContext.contact.pro.image.imageFile.childImageSharp.fluid}
+                alt={this.props.pageContext.contact.pro.image.altText}
               />
             </div>
           </div>
@@ -117,7 +122,7 @@ export default class Form extends React.Component {
         </div>
         <div className="form-header">
           <div className="form-title">
-            <h2 style={{margin: '50px 0'}}>Nous contacter</h2>
+            <h2 style={{ margin: '50px 0' }}>{this.props.pageContext.contact.title}</h2>
           </div>
           <div className="form-subtitle">
             {this.displayContent()}

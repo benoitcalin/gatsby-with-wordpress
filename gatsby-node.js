@@ -47,6 +47,7 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       },
     })
     /// 3.2. Create each job duration
+    const duration = results.data.wpgraphql.pages.edges[0].node.duration
     createPage({
       path: `/jobs/${job.slug}/duration`,
       component: require.resolve("./src/templates/duration.js"),
@@ -54,21 +55,29 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
         slug: job.slug,
         title: job.title,
         job: job,
+        duration: duration
       },
     })
   //   /// 3.3. Create each form
+    const contact = results.data.wpgraphql.pages.edges[0].node.contact
     createPage({
       path: `/contact/`,
       component: require.resolve("./src/templates/form.js"),
       context: {
         slug: job.slug,
         title: job.title,
+        contact: contact
       },
     })
 
     createPage({
       path: `/pro/contact/`,
       component: require.resolve("./src/templates/form.js"),
+      context: {
+        slug: job.slug,
+        title: job.title,
+        contact: contact
+      },
     })
   })
 }
@@ -109,6 +118,50 @@ exports.createResolvers = (
 const QUERY = `
     {
       wpgraphql {
+        pages {
+          edges {
+            node {
+              duration {
+                card1 {
+                  button
+                  subtitle
+                  text
+                  title
+                }
+                card2 {
+                  button
+                  subtitle
+                  text
+                  title
+                }
+                subtitle
+                title
+              }
+              contact {
+                title
+                pro {
+                  title
+                  text
+                  image {
+                    altText
+                    sourceUrl
+                    imageFile {
+                      childImageSharp {
+                        fluid(maxWidth: 1000) {
+                          src
+                          srcSet
+                          aspectRatio
+                          sizes
+                          base64
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
         posts {
           edges {
             node {
@@ -134,53 +187,10 @@ const QUERY = `
                     }
                   }
                 }
-                duration {
-                  title
-                  subtitle
-                  card1 {
-                    title
-                    subtitle
-                    text
-                    image {
-                      altText
-                      sourceUrl
-                      imageFile {
-                        childImageSharp {
-                          fluid(maxWidth: 1000) {
-                            src
-                            srcSet
-                            aspectRatio
-                            sizes
-                            base64
-                          }
-                        }
-                      }
-                    }
-                    button
-                  }
-                  card2 {
-                    title
-                    subtitle
-                    text
-                    image {
-                      altText
-                      sourceUrl
-                      imageFile {
-                        childImageSharp {
-                          fluid(maxWidth: 1000) {
-                            src
-                            srcSet
-                            aspectRatio
-                            sizes
-                            base64
-                          }
-                        }
-                      }
-                    }
-                    button
-                  }
-                }
                 page {
+                  divers {
+                    button
+                  }
                   header {
                     title
                     video {

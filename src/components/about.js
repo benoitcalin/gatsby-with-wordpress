@@ -10,6 +10,7 @@ const About = (props) => (
           <Img
             fluid={props.data.image1.imageFile.childImageSharp.fluid}
             className='about-image'
+            alt={props.data.image1.altText}
           />
         </div>
         <div className="col-md-4 about-col">
@@ -23,6 +24,7 @@ const About = (props) => (
           <Img
             fluid={props.data.image2.imageFile.childImageSharp.fluid}
             className='about-image'
+            alt={props.data.image2.altText}
           />
         </div>
       </div>

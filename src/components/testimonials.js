@@ -40,6 +40,7 @@ class Testimonials extends React.Component {
                       width='100px'
                       height='100px'
                       className='testimonial-image'
+                      alt={testimonial.image.altText}
                     />
                     <h5 className="text-center" style={{ width: '95%' }}>{testimonial.title}</h5>
                   </div>

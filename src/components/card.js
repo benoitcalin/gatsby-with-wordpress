@@ -23,6 +23,7 @@ class Card extends React.Component {
               justifyContent: 'center',
               zIndex: '-100'
             }}
+            alt={this.props.job.node.jobs.card.image.altText}
             fluid={this.handleImage(this.props.job.node.jobs.card.image)}
           />
           <div className="card-text">

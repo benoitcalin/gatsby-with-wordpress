@@ -122,7 +122,7 @@ export default class Jobs extends React.Component {
 
           <div className="job-second-row job-row row">
             <div className="col-sm">
-              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE MÉTIER</Link>
+              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>{job.divers.button}</Link>
             </div>
             <h3>Partagez à vos contacts</h3>
             <a className="fb-share" onClick={this.openFB}>
@@ -142,6 +142,7 @@ export default class Jobs extends React.Component {
                   height='250px'
                   width='250px'
                   fluid={job.market.image.imageFile.childImageSharp.fluid}
+                  alt={job.market.image.altText}
                 />
               </div>
               <div
@@ -177,7 +178,7 @@ export default class Jobs extends React.Component {
               <Top onMouseOver={this.hooverEffect} onMouseOut={this.endHooverEffect} onClick={this.scrollTop} />
             </div>
             <div className="col-sm" style={{marginBottom: '30px'}}>
-              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>TESTER CE MÉTIER</Link>
+              <Link className="btn button-primary" to={`/jobs/${this.props.pageContext.slug}/duration`}>{job.divers.button}</Link>
             </div>
           </div>
 

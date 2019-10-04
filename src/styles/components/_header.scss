@@ -39,8 +39,9 @@ a {
     display: flex;
     align-items: center;
     margin-left: 25px;
-    img {
-      height: 80%;
+    .gatsby-image-wrapper {
+      width: 171px;
+      height: 80px;
     }
   }
 }

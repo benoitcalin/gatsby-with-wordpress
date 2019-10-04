@@ -8,6 +8,7 @@ const Recomendation = (props) => {
         <Img
           fluid={props.image}
           className='recomendation-image'
+          alt={props.image.altText}
         />
         <div className="recomendation-person">
           <h5>{props.name}</h5>

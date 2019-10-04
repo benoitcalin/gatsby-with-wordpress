@@ -12,6 +12,7 @@ const Features = (props) => (
             <Img
               fluid={feature.image.imageFile.childImageSharp.fluid}
               className='feature-image'
+              alt={feature.image.altText}
             />
             <div className="feature-text">
               <h5 className="text-center">{feature.title}</h5>

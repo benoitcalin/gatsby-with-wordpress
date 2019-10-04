@@ -45,13 +45,15 @@
   }
   .form-pro-image {
     width: 50%;
+    height: 350px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     margin: 15px 0;
-    img {
+    @media (max-width: 444px) { width: 70%}
+    .gatsby-image-wrapper {
+      width: 280px;
       height: 350px;
-      width: auto;
     }
   }
 }
