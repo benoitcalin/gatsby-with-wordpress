@@ -29,7 +29,6 @@ export default class Header extends React.Component {
             <div className='header'>
               <Link to='/'>
                 <div className="header-logo">
-                  {console.log(data.wpgraphql.page.layout)}
                   <Img
                     fluid={data.wpgraphql.page.layout.logo.imageFile.childImageSharp.fluid}
                     height='80px'
@@ -39,7 +38,6 @@ export default class Header extends React.Component {
                 </div>
               </Link>
               <div className='header-links'>
-                {console.log(data)}
                 <Link className='linky' to='/'>{data.wpgraphql.page.layout.links.link1}</Link>
                 <Link className='linky' to='/jobs'>{data.wpgraphql.page.layout.links.link2}</Link>
                 <Link className='linky' to='/contact'>{data.wpgraphql.page.layout.links.link3}</Link>
